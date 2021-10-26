@@ -1,6 +1,6 @@
 package theGameOfLife;
 import javax.swing.*;
-import java.awt.*;
+import java.awt.event.*;
 public class MainGui {
 	//This will house the main frame, the grid, the Start, Stop, etc buttons, the ComboBox for pre-made patterns
 
@@ -24,7 +24,16 @@ public class MainGui {
 		
 		String[] pat = {"Single Cell", "Glider", "Methuselah", "Pentadecathlon","B-Heptomino", "Boat Stretcher", "Switch Engine", "Glider Gun"};
 		patterns = new JComboBox(pat);
-		
+		patterns.setSelectedIndex(0);
+		patterns.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
 		
 		
 		
