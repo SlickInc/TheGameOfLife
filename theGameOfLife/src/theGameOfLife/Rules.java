@@ -1,5 +1,6 @@
 package theGameOfLife;
 
-public class Rules {
+public class Rules {	
+	
 
 }
