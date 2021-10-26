@@ -14,8 +14,15 @@ public class MainGui {
 		frame.setSize(1000,1000);
 		frame.setLocationRelativeTo(null);
 		
-		label = new JLabel("");
+		label = new JLabel("Hi");
 		button = new JButton[100];
+		
+		panel = new JPanel();
+		panel.add(label);
+		
+		frame.setContentPane(panel);
+		frame.setVisible(true);
+	
 		
 	}
 }
