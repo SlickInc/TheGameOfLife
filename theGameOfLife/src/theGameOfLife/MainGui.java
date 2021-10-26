@@ -21,7 +21,7 @@ public class MainGui {
 	private JButton[] button;
 	
 	public MainGui() {
-		frame = new JFrame();
+		frame = new JFrame("The Game Of Life");
 		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
 		frame.setSize(1000,1000);
 		frame.setLocationRelativeTo(null);
@@ -31,6 +31,17 @@ public class MainGui {
 		
 		panel = new JPanel();
 		panel.add(label);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		frame.setContentPane(panel);
 		frame.setVisible(true);
