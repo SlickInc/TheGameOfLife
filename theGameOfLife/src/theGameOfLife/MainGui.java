@@ -22,6 +22,11 @@ public class MainGui {
 		
 		button = new JButton[100];
 		
+		JButton STOP = new JButton("Stop");
+		JButton START = new JButton("Start");
+		JButton CLEAR = new JButton("Clear");
+		JButton RANDOMIZE = new JButton("Randomize");
+		
 		String[] pat = {"Single Cell", "Glider", "Methuselah", "Pentadecathlon","B-Heptomino", "Boat Stretcher", "Switch Engine", "Glider Gun"};
 		patterns = new JComboBox(pat);
 		patterns.setSelectedIndex(0);
@@ -29,13 +34,55 @@ public class MainGui {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
+				
 				
 			}
 			
 		});
 		
+		START.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				
+			}
+			
+			
+		});
 		
+		STOP.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				
+			}
+			
+			
+		});
+		
+		CLEAR.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				
+			}
+			
+			
+		});
+		
+		RANDOMIZE.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				
+			}
+			
+			
+		});
 		
 		
 		
