@@ -33,11 +33,13 @@ public class MainGui {
 		
 		label = new JLabel("Hi");
 		
-		button = new JButton[100];
+		button = new JButton[10000];
 		
-
+/**
+ * Array of Buttons
+ */
 		
-		for (int i = 0; i<100; i++) {
+		for (int i = 0; i<10000; i++) {
 			button[i] = new JButton("");
 			
 			button[i].addActionListener(new ActionListener() {
@@ -139,8 +141,8 @@ public class MainGui {
 		
 		
 
+		
 		panel.add(label);
-
 		frame.setContentPane(panel);
 		frame.setVisible(true);
 	
