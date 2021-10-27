@@ -37,15 +37,19 @@ public class MainGui {
 		String[] pat = {"Single Cell", "Glider", "Methuselah", "Pentadecathlon","B-Heptomino", "Boat Stretcher", "Switch Engine", "Glider Gun"};
 		patterns = new JComboBox(pat);
 		patterns.setSelectedIndex(0);
-		patterns.addActionListener(new ActionListener(){
+		for(int i = 0; i<pat.length; i++) {
+			patterns.addActionListener(new ActionListener(){
 
-			@Override
-			public void actionPerformed(ActionEvent e) {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					
+					
+				}
 				
-				
-			}
-			
-		});
+			});
+			panel.add(patterns);
+		}
+		
 		
 
 		button = new JButton[10000];
@@ -55,8 +59,7 @@ public class MainGui {
  */
 		
 		for (int i = 0; i<10000; i++) {
-			button[i] = new JButton("");
-			
+			button[i] = new JButton(" ");
 			button[i].addActionListener(new ActionListener() {
 
 				@Override
