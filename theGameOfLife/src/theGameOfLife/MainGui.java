@@ -31,7 +31,7 @@ public class MainGui {
 		panel = new JPanel();
 
 		
-		label = new JLabel("Hi");
+		label = new JLabel();
 		
 
 		String[] pat = {"Single Cell", "Glider", "Methuselah", "Pentadecathlon","B-Heptomino", "Boat Stretcher", "Switch Engine", "Glider Gun"};
@@ -140,7 +140,10 @@ public class MainGui {
 		
 		
 		
-		
+		panel.add(RANDOMIZE);
+		panel.add(CLEAR);
+		panel.add(START);
+		panel.add(STOP);
 		
 		
 		
