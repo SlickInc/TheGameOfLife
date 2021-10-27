@@ -47,7 +47,7 @@ public class MainGui {
 				}
 				
 			});
-			panel.add(patterns);
+			
 		}
 		
 		
@@ -145,7 +145,7 @@ public class MainGui {
 		panel.add(START);
 		panel.add(STOP);
 		
-		
+		panel.add(patterns);
 		
 
 		
