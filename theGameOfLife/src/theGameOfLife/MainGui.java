@@ -28,9 +28,10 @@ public class MainGui {
 		GridBagConstraints c = new GridBagConstraints();
 		
 
-		panel = new JPanel();
+		panel = new JPanel(new GridBagLayout());
 
 		
+		button = new JButton[10000];
 		label = new JLabel("Hi");
 		
 
@@ -48,39 +49,7 @@ public class MainGui {
 		});
 		
 
-		button = new JButton[10000];
 		
-/**
- * Array of Buttons
- */
-		
-		for (int i = 0; i<10000; i++) {
-			button[i] = new JButton("");
-			
-			button[i].addActionListener(new ActionListener() {
-
-				@Override
-				public void actionPerformed(ActionEvent e) {
-				
-					
-				}
-			});
-				
-			c.gridx = x;
-			c.gridy= y;
-			panel.add(button[i],c);
-			x++;
-			if(x == 100) {
-				x= 0;
-				y++;		
-			}
-		}
-	
-		
-		
-		
-		panel = new JPanel();
-		panel.add(label);
 
 		JButton STOP = new JButton("Stop");
 		JButton START = new JButton("Start");
@@ -134,6 +103,35 @@ public class MainGui {
 			
 		});
 		
+		for (int i = 0; i<10000; i++) {
+			button[i] = new JButton("");
+			
+			button[i].addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+				
+					
+				}
+			});
+				
+			c.gridx = x;
+			c.gridy= y;
+			panel.add(button[i],c);
+			x++;
+			if(x == 100) {
+				x= 0;
+				y++;		
+			}
+		}
+	
+		
+		
+		
+		
+	
+
+		
 		
 		
 		
@@ -143,7 +141,7 @@ public class MainGui {
 		
 
 		
-		panel.add(label);
+		panel.add(label,c);
 		frame.setContentPane(panel);
 		frame.setVisible(true);
 	
