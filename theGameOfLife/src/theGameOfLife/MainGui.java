@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.awt.GridBagLayout;
 
 import javax.swing.*;
+import java.awt.event.*;
 public class MainGui {
 	//This will house the main frame, the grid, the Start, Stop, etc buttons, the ComboBox for pre-made patterns
 
@@ -12,22 +13,29 @@ public class MainGui {
 	private JLabel label;
 	private JPanel panel;
 	private JButton[] button;
+	private JComboBox patterns;
 	
 	public MainGui() {
-		frame = new JFrame();
+		frame = new JFrame("The Game Of Life");
 		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
 		frame.setSize(1000,1000);
 		frame.setLocationRelativeTo(null);
 		
+
 		int x = 0;
 		int y = 0;
 		
 		GridBagConstraints c = new GridBagConstraints();
 		
+
+		panel = new JPanel();
+
 		
 		label = new JLabel("Hi");
+		
 		button = new JButton[100];
 		
+
 		
 		for (int i = 0; i<100; i++) {
 			button[i] = new JButton("");
@@ -56,7 +64,80 @@ public class MainGui {
 		
 		panel = new JPanel();
 		panel.add(label);
+
+		JButton STOP = new JButton("Stop");
+		JButton START = new JButton("Start");
+		JButton CLEAR = new JButton("Clear");
+		JButton RANDOMIZE = new JButton("Randomize");
+
 		
+		String[] pat = {"Single Cell", "Glider", "Methuselah", "Pentadecathlon","B-Heptomino", "Boat Stretcher", "Switch Engine", "Glider Gun"};
+		patterns = new JComboBox(pat);
+		patterns.setSelectedIndex(0);
+		patterns.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				
+			}
+			
+		});
+		
+		START.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				
+			}
+			
+			
+		});
+		
+		STOP.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				
+			}
+			
+			
+		});
+		
+		CLEAR.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				
+			}
+			
+			
+		});
+		
+		RANDOMIZE.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				
+			}
+			
+			
+		});
+		
+		
+		
+		
+		
+		
+		
+		
+
+		panel.add(label);
+
 		frame.setContentPane(panel);
 		frame.setVisible(true);
 	
