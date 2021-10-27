@@ -14,6 +14,7 @@ public class MainGui {
 	private JPanel panel;
 	private JButton[] button;
 	private JComboBox patterns;
+	boolean toggle = false;
 	
 	public MainGui() {
 		frame = new JFrame("The Game Of Life");
@@ -86,6 +87,7 @@ public class MainGui {
 		JButton START = new JButton("Start");
 		JButton CLEAR = new JButton("Clear");
 		JButton RANDOMIZE = new JButton("Randomize");
+		JButton RULES = new JButton("Rules");
 
 		
 		
@@ -134,6 +136,19 @@ public class MainGui {
 			
 		});
 		
+		RULES.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(toggle==false) {
+				Rules Run = new Rules();
+				}
+				
+			}
+			
+			
+		});
+		
 		
 		
 		
@@ -141,6 +156,7 @@ public class MainGui {
 		panel.add(CLEAR);
 		panel.add(START);
 		panel.add(STOP);
+		panel.add(RULES);
 		
 		
 		
