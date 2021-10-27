@@ -87,7 +87,10 @@ public class MainGui {
 		
 		
 		
-		
+		panel.add(RANDOMIZE);
+		panel.add(CLEAR);
+		panel.add(START);
+		panel.add(STOP);
 		
 		
 		
