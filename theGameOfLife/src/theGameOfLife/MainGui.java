@@ -33,6 +33,21 @@ public class MainGui {
 		
 		label = new JLabel("Hi");
 		
+
+		String[] pat = {"Single Cell", "Glider", "Methuselah", "Pentadecathlon","B-Heptomino", "Boat Stretcher", "Switch Engine", "Glider Gun"};
+		patterns = new JComboBox(pat);
+		patterns.setSelectedIndex(0);
+		patterns.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				
+			}
+			
+		});
+		
+
 		button = new JButton[10000];
 		
 /**
@@ -73,18 +88,7 @@ public class MainGui {
 		JButton RANDOMIZE = new JButton("Randomize");
 
 		
-		String[] pat = {"Single Cell", "Glider", "Methuselah", "Pentadecathlon","B-Heptomino", "Boat Stretcher", "Switch Engine", "Glider Gun"};
-		patterns = new JComboBox(pat);
-		patterns.setSelectedIndex(0);
-		patterns.addActionListener(new ActionListener(){
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				
-				
-			}
-			
-		});
+		
 		
 		START.addActionListener(new ActionListener() {
 
