@@ -103,7 +103,10 @@ public class MainGui {
 			
 		});
 		
-		for (int i = 0; i<10000; i++) {
+/**
+ * Lays button array out		
+ */
+		for (int i = 0; i<5000; i++) {
 			button[i] = new JButton("");
 			
 			button[i].addActionListener(new ActionListener() {
@@ -114,12 +117,13 @@ public class MainGui {
 					
 				}
 			});
-				
+			c.ipadx	= -20;
+			c.ipady = -5;
 			c.gridx = x;
 			c.gridy= y;
 			panel.add(button[i],c);
 			x++;
-			if(x == 100) {
+			if(x == 50) {
 				x= 0;
 				y++;		
 			}
