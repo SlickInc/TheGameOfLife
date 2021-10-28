@@ -68,7 +68,7 @@ public class MainGui {
 		JButton START = new JButton("Start");
 		JButton CLEAR = new JButton("Clear");
 		JButton RANDOMIZE = new JButton("Randomize");
-		JButton RULES = new Jbutton("Rules");
+		JButton RULES = new JButton("Rules");
 
 		
 		
