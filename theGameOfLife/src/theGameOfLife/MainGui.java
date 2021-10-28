@@ -24,7 +24,7 @@ public class MainGui {
 		
 
 		int x = 0;
-		int y = 0;
+		int y = 3;
 		
 		GridBagConstraints c = new GridBagConstraints();
 		
@@ -59,11 +59,10 @@ public class MainGui {
 			
 		}
 		
+	
+
 		
-
-
 		
-
 		JButton STOP = new JButton("Stop");
 		JButton START = new JButton("Start");
 		JButton CLEAR = new JButton("Clear");
@@ -170,8 +169,26 @@ public class MainGui {
 
 		
 		
+		c.ipadx = 6;
+		c.ipady = 6;		
+		c.gridx = 1;
+		c.gridy =1;
+		panel.add(RANDOMIZE,c);
+		c.gridx=2;
+		c.gridy=1;
+		panel.add(CLEAR,c);
+		c.gridx=3;
+		c.gridy=1;
+		panel.add(START,c);
+		c.gridx=4;
+		c.gridy=1;
+		panel.add(STOP,c);
 		
-		
+
+		c.gridx=5;
+		c.gridy=1;
+		panel.add(patterns,c);
+
 		panel.add(RANDOMIZE);
 		panel.add(CLEAR);
 		panel.add(START);
@@ -179,6 +196,7 @@ public class MainGui {
 		panel.add(RULES);
 		
 		panel.add(patterns);
+
 		
 
 		
