@@ -12,15 +12,27 @@ public class Patterns {
 		return grid;
 	}
 	public boolean[] glider(boolean grid[]) {
-		int tempx = x;
-		if((tempx+1) == 0){
+		try {
+			grid[x] = true;
+			grid[x+1] = true;
+			grid[x+2] = true;
+			grid[x+50] = true;
+			grid[x+101] = true;
+		}catch(Exception e){
 			
 		}
-		grid[x] = true;
-		grid[x+1] = true;
-		grid[x+2] = true;
-		grid[x+50] = true;
-		grid[x+101] = true;
+		return grid;
+	}
+	public boolean[] methuselah(boolean grid[]) {
+		try {
+			grid[x] = true;
+			grid[x+1] = true;
+			grid[x-1] = true;
+			grid[x+50] = true;
+			grid[x-49] = true;
+		}catch(Exception e){
+			
+		}
 		return grid;
 	}
 
