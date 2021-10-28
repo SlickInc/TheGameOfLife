@@ -48,32 +48,24 @@ public class Rules {
 		
 		T1 = new JLabel("One Neighbors: ");
 		
-		
 		N1.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String name = (String)N1.getSelectedItem(); 
-
-				label.setText(name); 
-				
-				
+				label.setText(name); 		
 			}
 			
 		});
 		
 		T2 = new JLabel("Two Neighbors: ");
 		
-		
 		N2.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String name = (String)N2.getSelectedItem(); 
-
 				label.setText(name); 
-				
-				
 			}
 			
 		});
@@ -85,10 +77,7 @@ public class Rules {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String name = (String)N3.getSelectedItem(); 
-
 				label.setText(name); 
-				
-				
 			}
 			
 		});
@@ -100,11 +89,8 @@ public class Rules {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String name = (String)N4.getSelectedItem(); 
-
+				String name = (String)N4.getSelectedItem();
 				label.setText(name); 
-				
-				
 			}
 			
 		});
@@ -116,10 +102,7 @@ public class Rules {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String name = (String)N5.getSelectedItem(); 
-
 				label.setText(name); 
-				
-				
 			}
 			
 		});
