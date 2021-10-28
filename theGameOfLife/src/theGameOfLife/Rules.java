@@ -10,7 +10,7 @@ import java.awt.event.*;
 
 public class Rules {	
 	
-	JLabel label;
+	JLabel label,T1,T2,T3,T4,T5;
 	JFrame frame;
 	JPanel panel;
 	boolean toggle = false;
@@ -27,6 +27,8 @@ public class Rules {
 		frame.setSize(400,400);
 		frame.setLocationRelativeTo(null);
 		
+		panel = new JPanel(new GridBagLayout());
+		GridBagConstraints c = new GridBagConstraints();
 		
 		String[] names = {"Live", "Die", "Born"};
 		// hay
@@ -45,6 +47,8 @@ public class Rules {
 		N5 = new JComboBox(names);
 		N5.setSelectedIndex(0);
 		
+		T1 = new JLabel("One Neighbors: ");
+		
 		
 		N1.addActionListener(new ActionListener() {
 
@@ -59,6 +63,9 @@ public class Rules {
 			
 		});
 		
+		T2 = new JLabel("Two Neighbors: ");
+		
+		
 		N2.addActionListener(new ActionListener() {
 
 			@Override
@@ -72,6 +79,7 @@ public class Rules {
 			
 		});
 		
+		T3 = new JLabel("Three Neighbors: ");
 		
 		N3.addActionListener(new ActionListener() {
 
@@ -87,6 +95,7 @@ public class Rules {
 		});
 		
 		
+		T4 = new JLabel("Four Neighbors: ");
 		
 		N4.addActionListener(new ActionListener() {
 
@@ -101,6 +110,7 @@ public class Rules {
 			
 		});
 		
+		T5 = new JLabel("Five Neighbors: ");
 		
 		N5.addActionListener(new ActionListener() {
 
@@ -115,12 +125,45 @@ public class Rules {
 			
 		});
 		
-		panel.add(N1);
-		panel.add(N2);
-		panel.add(N3);
-		panel.add(N4);
-		panel.add(N5);
+		c.gridx = 1;
+		c.gridy = 1;
+		panel.add(N1,c);
 		
+		c.gridx = 1;
+		c.gridy = 2;
+		panel.add(N2,c);
+		
+		c.gridx = 1;
+		c.gridy = 3;
+		panel.add(N3,c);
+		
+		c.gridx = 1;
+		c.gridy = 4;
+		panel.add(N4,c);
+		
+		c.gridx = 1;
+		c.gridy = 5;
+		panel.add(N5,c);
+		
+		c.gridx = 2;
+		c.gridy = 1;
+		panel.add(T1,c);
+		
+		c.gridx = 2;
+		c.gridy = 2;
+		panel.add(T2,c);
+		
+		c.gridx = 2;
+		c.gridy = 3;
+		panel.add(T3,c);
+		
+		c.gridx = 2;
+		c.gridy = 4;
+		panel.add(T4,c);
+		
+		c.gridx = 2;
+		c.gridy = 5;
+		panel.add(T5,c);
 		
 		
 		frame.setContentPane(panel);
