@@ -175,6 +175,8 @@ public class MainGui {
 	 * Puts buttons at top of the array	
 	 */
 		
+		c.ipadx = 10;
+		c.ipady=10;
 		c.gridx = 1;
 		c.gridy =1;
 		top.add(RANDOMIZE,c);
@@ -201,10 +203,16 @@ public class MainGui {
 	
 
 		
-
-		
-		panel.add(label,c);
+		c.gridx = 1;
+		c.gridy = 1;
 		panel.add(bottom,c);
+		
+		
+		
+		
+		c.gridx=1;
+		c.gridy=0;
+		top.add(label,c);
 		panel.add(top,c);
 		frame.setContentPane(panel);
 		frame.setVisible(true);
