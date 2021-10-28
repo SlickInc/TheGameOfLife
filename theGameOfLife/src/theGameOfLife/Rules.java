@@ -164,7 +164,7 @@ public class Rules {
 		c.gridx = 2;
 		c.gridy = 5;
 		panel.add(T5,c);
-		
+		// hey 
 		
 		frame.setContentPane(panel);
 		frame.setVisible(true);
