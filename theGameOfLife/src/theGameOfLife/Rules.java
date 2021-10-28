@@ -23,7 +23,6 @@ public class Rules {
 		
 		
 		frame = new JFrame("The Game Of Life");
-		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
 		frame.setSize(400,400);
 		frame.setLocationRelativeTo(null);
 		
