@@ -62,36 +62,6 @@ public class MainGui {
 		
 
 
-		button = new JButton[10000];
-		
-/**
- * Array of Buttons
- */
-		
-		for (int i = 0; i<10000; i++) {
-			button[i] = new JButton(" ");
-			button[i].addActionListener(new ActionListener() {
-
-
-
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					
-					
-				}
-			});
-				
-			c.gridx = x;
-			c.gridy= y;
-			panel.add(button[i],c);
-			x++;
-			if(x == 100) {
-				x= 0;
-				y++;		
-			}
-		}
-	
-
 		
 
 		JButton STOP = new JButton("Stop");
@@ -158,7 +128,7 @@ public class MainGui {
  */
 		for (int i = 0; i<5000; i++) {
 			button[i] = new JButton("");
-			
+			button[i].setActionCommand(Integer.toString(i));
 			button[i].addActionListener(new ActionListener() {
 
 				@Override
