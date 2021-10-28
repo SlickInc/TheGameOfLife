@@ -68,6 +68,7 @@ public class MainGui {
 		JButton START = new JButton("Start");
 		JButton CLEAR = new JButton("Clear");
 		JButton RANDOMIZE = new JButton("Randomize");
+		JButton RULES = new Jbutton("Rules");
 
 		
 		
@@ -106,6 +107,18 @@ public class MainGui {
 		});
 		
 		RANDOMIZE.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				
+			}
+			
+			
+		});
+		
+		
+		RULES.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -163,6 +176,7 @@ public class MainGui {
 		panel.add(CLEAR);
 		panel.add(START);
 		panel.add(STOP);
+		panel.add(RULES);
 		
 		panel.add(patterns);
 		
