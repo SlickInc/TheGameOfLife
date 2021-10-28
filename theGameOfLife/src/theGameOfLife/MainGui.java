@@ -1,4 +1,5 @@
 package theGameOfLife;
+import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,7 +10,8 @@ import java.awt.event.*;
 
 public class MainGui {
 	//This will house the main frame, the grid, the Start, Stop, etc buttons, the ComboBox for pre-made patterns
-
+	
+	
 	private JFrame frame;
 	private JLabel label;
 	private JPanel panel;
@@ -40,29 +42,13 @@ public class MainGui {
 		label = new JLabel();
 
 		
-/**
- * Sets up premade patterns
- */
-		String[] pat = {"Single Cell", "Glider", "Methuselah", "Pentadecathlon","B-Heptomino", "Boat Stretcher", "Switch Engine", "Glider Gun"};
-		patterns = new JComboBox(pat);
-		patterns.setSelectedIndex(0);
-		for(int i = 0; i<pat.length; i++) {
-			patterns.addActionListener(new ActionListener(){
 
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					
-					
-				}
-				
-			});
-			
-		}
-		
 	
 
 		
-		
+/**
+ * Control Buttons		
+ */
 		JButton STOP = new JButton("Stop");
 		JButton START = new JButton("Start");
 		JButton CLEAR = new JButton("Clear");
@@ -127,10 +113,30 @@ public class MainGui {
 			
 			
 		});
+		
+/**
+ * Sets up premade patterns
+ */
+		String[] pat = {"Single Cell", "Glider", "Methuselah", "Pentadecathlon","B-Heptomino", "Boat Stretcher", "Switch Engine", "Glider Gun"};
+		patterns = new JComboBox(pat);
+		patterns.setSelectedIndex(0);
+		for(int i = 0; i<pat.length; i++) {
+			patterns.addActionListener(new ActionListener(){
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					
+					
+				}
+				
+			});
+			
+		}
+		
 	
-	/**
-	 * boolean array	
-	 */
+/**
+ * boolean array	
+ */
 		
 		boolean booarray[];
 		booarray = new boolean[5000];
@@ -145,7 +151,19 @@ public class MainGui {
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
+					int num = Integer.parseInt(e.getActionCommand());
+					Patterns p = new Patterns(num);
+					switch ((String)patterns.getSelectedItem()) { 
+					case "Single Cell": p.singleCell(booarray);break;
+					case "Glider": p.glider(booarray);break;
+						
+					}
 					
+					for(int i = 0; i<5000;i++) {
+						if (booarray[i] == true){
+							button[i].setBackground(Color.BLUE);
+						}
+					}
 					
 				}
 			});
