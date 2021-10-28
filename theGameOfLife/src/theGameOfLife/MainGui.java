@@ -12,6 +12,8 @@ public class MainGui {
 
 	private JFrame frame;
 	private JLabel label;
+	private JPanel bottom;
+	private JPanel top;
 	private JPanel panel;
 	private JButton[] button;
 	private JComboBox patterns;
@@ -19,26 +21,26 @@ public class MainGui {
 	public MainGui() {
 		frame = new JFrame("The Game Of Life");
 		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
-		frame.setSize(1000,1000);
+		frame.setSize(1280,720);
 		frame.setLocationRelativeTo(null);
 		
 
 		int x = 0;
-		int y = 3;
+		int y = 0;
 		
 		GridBagConstraints c = new GridBagConstraints();
 		
 
 		panel = new JPanel(new GridBagLayout());
-
+		top = new JPanel(new GridBagLayout());
+		bottom = new JPanel(new GridBagLayout());
 
 		
 		button = new JButton[5000];
-		label = new JLabel("Hi");
+		label = new JLabel("");
 
 		
-		label = new JLabel();
-
+	
 		
 /**
  * Sets up premade patterns
@@ -136,7 +138,7 @@ public class MainGui {
 		booarray = new boolean[5000];
 		
 /**
- * Lays button array out		
+ * Lays button array out and puts it at the bottom of array		
  */
 		for (int i = 0; i<5000; i++) {
 			button[i] = new JButton("");
@@ -149,11 +151,11 @@ public class MainGui {
 					
 				}
 			});
-			c.ipadx	= -20;
+			c.ipadx	= -10;
 			c.ipady = -5;
 			c.gridx = x;
 			c.gridy= y;
-			panel.add(button[i],c);
+			bottom.add(button[i],c);
 			x++;
 			if(x == 50) {
 				x= 0;
@@ -169,31 +171,32 @@ public class MainGui {
 
 		
 		
-		c.ipadx = 8;
-		c.ipady = 8;
+	/**
+	 * Puts buttons at top of the array	
+	 */
 		
 		c.gridx = 1;
 		c.gridy =1;
-		panel.add(RANDOMIZE,c);
+		top.add(RANDOMIZE,c);
 		c.gridx=2;
 		c.gridy=1;
-		panel.add(CLEAR,c);
+		top.add(CLEAR,c);
 		c.gridx=3;
 		c.gridy=1;
-		panel.add(START,c);
+		top.add(START,c);
 		c.gridx=4;
 		c.gridy=1;
-		panel.add(STOP,c);
+		top.add(STOP,c);
 		
 
 		c.gridx=5;
 		c.gridy=1;
-		panel.add(patterns,c);
+		top.add(patterns,c);
 		
 		
 		c.gridx=6;
 		c.gridy=1;
-		panel.add(RULES,c);
+		top.add(RULES,c);
 		
 	
 
@@ -201,6 +204,8 @@ public class MainGui {
 
 		
 		panel.add(label,c);
+		panel.add(bottom,c);
+		panel.add(top,c);
 		frame.setContentPane(panel);
 		frame.setVisible(true);
 	
