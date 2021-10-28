@@ -116,6 +116,11 @@ public class Rules {
 		});
 		
 		panel.add(combo);
+		panel.add(N1);
+		panel.add(N2);
+		panel.add(N3);
+		panel.add(N4);
+		panel.add(N5);
 		
 		
 		
