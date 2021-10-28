@@ -29,7 +29,7 @@ public class Rules {
 		
 		
 		
-		
+		// hay
 		N1 = new JComboBox(names);
 		N1.setSelectedIndex(0);
 		
