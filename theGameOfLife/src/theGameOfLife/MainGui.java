@@ -31,10 +31,16 @@ public class MainGui {
 		GridBagConstraints c = new GridBagConstraints();
 		
 
-		panel = new JPanel();
+		panel = new JPanel(new GridBagLayout());
+
+
+		
+		button = new JButton[5000];
+		label = new JLabel("Hi");
 
 		
 		label = new JLabel();
+
 		
 /**
  * Sets up premade patterns
@@ -57,38 +63,8 @@ public class MainGui {
 		
 		
 
-		button = new JButton[10000];
-		
-/**
- * Array of Buttons
- */
-		
-		for (int i = 0; i<10000; i++) {
-			button[i] = new JButton(" ");
-			button[i].addActionListener(new ActionListener() {
 
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					
-					
-				}
-			});
-				
-			c.gridx = x;
-			c.gridy= y;
-			panel.add(button[i],c);
-			x++;
-			if(x == 100) {
-				x= 0;
-				y++;		
-			}
-		}
-	
 		
-		
-		
-		panel = new JPanel();
-		panel.add(label);
 
 		JButton STOP = new JButton("Stop");
 		JButton START = new JButton("Start");
@@ -142,6 +118,46 @@ public class MainGui {
 			
 			
 		});
+	
+	/**
+	 * boolean array	
+	 */
+		
+		boolean booarray[];
+		booarray = new boolean[5000];
+		
+/**
+ * Lays button array out		
+ */
+		for (int i = 0; i<5000; i++) {
+			button[i] = new JButton("");
+			button[i].setActionCommand(Integer.toString(i));
+			button[i].addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+				
+					
+				}
+			});
+			c.ipadx	= -20;
+			c.ipady = -5;
+			c.gridx = x;
+			c.gridy= y;
+			panel.add(button[i],c);
+			x++;
+			if(x == 50) {
+				x= 0;
+				y++;		
+			}
+		}
+	
+		
+		
+		
+		
+	
+
 		
 		RULES.addActionListener(new ActionListener() {
 
@@ -169,7 +185,7 @@ public class MainGui {
 		
 
 		
-		panel.add(label);
+		panel.add(label,c);
 		frame.setContentPane(panel);
 		frame.setVisible(true);
 	
