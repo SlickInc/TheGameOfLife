@@ -31,7 +31,7 @@ public class MainGui {
 		panel = new JPanel(new GridBagLayout());
 
 		
-		button = new JButton[10000];
+		button = new JButton[5000];
 		label = new JLabel("Hi");
 		
 
@@ -102,6 +102,13 @@ public class MainGui {
 			
 			
 		});
+	
+	/**
+	 * boolean array	
+	 */
+		
+		boolean booarray[];
+		booarray = new boolean[5000];
 		
 /**
  * Lays button array out		
