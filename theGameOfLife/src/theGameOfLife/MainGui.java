@@ -6,6 +6,7 @@ import java.awt.GridBagLayout;
 
 import javax.swing.*;
 import java.awt.event.*;
+
 public class MainGui {
 	//This will house the main frame, the grid, the Start, Stop, etc buttons, the ComboBox for pre-made patterns
 
@@ -30,24 +31,66 @@ public class MainGui {
 
 		panel = new JPanel(new GridBagLayout());
 
+
 		
 		button = new JButton[5000];
 		label = new JLabel("Hi");
-		
 
+		
+		label = new JLabel();
+
+		
+/**
+ * Sets up premade patterns
+ */
 		String[] pat = {"Single Cell", "Glider", "Methuselah", "Pentadecathlon","B-Heptomino", "Boat Stretcher", "Switch Engine", "Glider Gun"};
 		patterns = new JComboBox(pat);
 		patterns.setSelectedIndex(0);
-		patterns.addActionListener(new ActionListener(){
+		for(int i = 0; i<pat.length; i++) {
+			patterns.addActionListener(new ActionListener(){
 
-			@Override
-			public void actionPerformed(ActionEvent e) {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					
+					
+				}
 				
-				
-			}
+			});
 			
-		});
+		}
 		
+		
+
+
+		button = new JButton[10000];
+		
+/**
+ * Array of Buttons
+ */
+		
+		for (int i = 0; i<10000; i++) {
+			button[i] = new JButton(" ");
+			button[i].addActionListener(new ActionListener() {
+
+
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					
+					
+				}
+			});
+				
+			c.gridx = x;
+			c.gridy= y;
+			panel.add(button[i],c);
+			x++;
+			if(x == 100) {
+				x= 0;
+				y++;		
+			}
+		}
+	
 
 		
 
@@ -146,9 +189,12 @@ public class MainGui {
 		
 		
 		
+		panel.add(RANDOMIZE);
+		panel.add(CLEAR);
+		panel.add(START);
+		panel.add(STOP);
 		
-		
-		
+		panel.add(patterns);
 		
 
 		
