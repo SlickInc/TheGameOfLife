@@ -169,8 +169,9 @@ public class MainGui {
 
 		
 		
-		c.ipadx = 6;
-		c.ipady = 6;		
+		c.ipadx = 8;
+		c.ipady = 8;
+		
 		c.gridx = 1;
 		c.gridy =1;
 		panel.add(RANDOMIZE,c);
@@ -188,14 +189,13 @@ public class MainGui {
 		c.gridx=5;
 		c.gridy=1;
 		panel.add(patterns,c);
-
-		panel.add(RANDOMIZE);
-		panel.add(CLEAR);
-		panel.add(START);
-		panel.add(STOP);
-		panel.add(RULES);
 		
-		panel.add(patterns);
+		
+		c.gridx=6;
+		c.gridy=1;
+		panel.add(RULES,c);
+		
+	
 
 		
 
