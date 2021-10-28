@@ -110,7 +110,7 @@ public class MainGui {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				Rules run = new Rules();
 				
 			}
 			
