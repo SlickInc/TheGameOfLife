@@ -15,7 +15,7 @@ public class Rules {
 	JPanel panel;
 	boolean toggle = false;
 	JComboBox combo,N1,N2,N3,N4,N5;
-	String[] names = {"Live", "Die", "Born"};
+	
 	String Neighbors;
 
 	
@@ -28,7 +28,7 @@ public class Rules {
 		frame.setLocationRelativeTo(null);
 		
 		
-		
+		String[] names = {"Live", "Die", "Born"};
 		// hay
 		N1 = new JComboBox(names);
 		N1.setSelectedIndex(0);
@@ -115,7 +115,6 @@ public class Rules {
 			
 		});
 		
-		panel.add(combo);
 		panel.add(N1);
 		panel.add(N2);
 		panel.add(N3);
