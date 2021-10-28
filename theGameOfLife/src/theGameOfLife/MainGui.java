@@ -17,6 +17,7 @@ public class MainGui {
 	private JComboBox patterns;
 	boolean toggle = false;
 	
+	
 	public MainGui() {
 		frame = new JFrame("The Game Of Life");
 		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
@@ -146,7 +147,7 @@ public class MainGui {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if(toggle==false) {
+				if(toggle==true) {
 				Rules Run = new Rules();
 				}
 				
