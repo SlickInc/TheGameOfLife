@@ -158,7 +158,8 @@ public class MainGui {
 					switch ((String)patterns.getSelectedItem()) { 
 					case "Single Cell": p.singleCell(booarray);break;
 					case "Glider": p.glider(booarray);break;
-						
+					case "Methuselah": p.methuselah(booarray);
+					
 					}
 					
 					for(int i = 0; i<5000;i++) {

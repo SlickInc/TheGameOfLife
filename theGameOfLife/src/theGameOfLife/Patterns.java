@@ -23,5 +23,17 @@ public class Patterns {
 		}
 		return grid;
 	}
+	public boolean[] methuselah(boolean grid[]) {
+		try {
+			grid[x] = true;
+			grid[x+1] = true;
+			grid[x-1] = true;
+			grid[x+50] = true;
+			grid[x-49] = true;
+		}catch(Exception e){
+			
+		}
+		return grid;
+	}
 
 }
