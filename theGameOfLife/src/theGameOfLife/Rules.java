@@ -53,7 +53,9 @@ public class Rules {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String name = (String)N1.getSelectedItem(); 
-				label.setText(name); 		
+				label.setText(name); 	
+				
+				
 			}
 			
 		});
@@ -152,5 +154,5 @@ public class Rules {
 		frame.setVisible(true);
 	
 
-}
+	}
 }
