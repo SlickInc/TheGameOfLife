@@ -16,7 +16,7 @@ public class Rules {
 	boolean toggle = false;
 	JComboBox combo,N1,N2,N3,N4,N5,N6,N7,N8;
 	
-	String Neighbors;
+	String n1,n2,n3,n4,n5,n6,n7,n8;
 
 	
 	public Rules() {
@@ -62,11 +62,8 @@ public class Rules {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String name = (String)N1.getSelectedItem();
-				for(int i = 0; i<5000;i++) {
-					if(name.equals("Live")) {
-						
-					}
-				}
+				
+				n1 = name;
 				
 			}
 			
@@ -79,7 +76,7 @@ public class Rules {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String name = (String)N2.getSelectedItem(); 
-				
+				n2=name;
 			}
 			
 		});
@@ -91,7 +88,7 @@ public class Rules {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String name = (String)N3.getSelectedItem(); 
-				
+				n3=name;
 				
 			}
 			
@@ -105,7 +102,7 @@ public class Rules {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String name = (String)N4.getSelectedItem();
-				 
+				 n4=name;
 			}
 			
 		});
@@ -117,7 +114,7 @@ public class Rules {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String name = (String)N5.getSelectedItem(); 
-				
+				n5=name;
 			}
 			
 		});
@@ -130,7 +127,7 @@ public class Rules {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String name = (String)N6.getSelectedItem(); 
-
+				n6= name;
 				
 				
 				
@@ -145,7 +142,7 @@ public class Rules {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String name = (String)N7.getSelectedItem(); 
-
+				n7=name;
 				
 				
 				
@@ -161,7 +158,7 @@ public class Rules {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String name = (String)N8.getSelectedItem(); 
-				
+				n8=name;
 				
 				
 			}
