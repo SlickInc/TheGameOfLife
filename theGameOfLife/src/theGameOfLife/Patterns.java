@@ -68,5 +68,14 @@ public class Patterns {
 		}
 		return grid;
 	}
+	public boolean[] boatStretcher(boolean grid[]) {
+		try {
+			grid[x] = true;
+			grid[x] = true;
+		}catch(Exception e){
+			
+		}
+		return grid;
+	}
 
 }
