@@ -249,6 +249,34 @@ public class Rules {
 			n++;
 		}
 		
+		if(grid[element-1] == true ) {
+			n++;
+		}
+		
+		if(grid[element+50] == true ) {
+			n++;
+		}
+		
+		if(grid[element-50] == true ) {
+			n++;
+		}
+		
+		if(grid[element+51] == true ) {
+			n++;
+		}
+		
+		if(grid[element+49] == true ) {
+			n++;
+		}
+		
+		if(grid[element-51] == true ) {
+			n++;
+		}
+		
+		if(grid[element-49] == true ) {
+			n++;
+		}
+		
 		return n;
 	}
 	
