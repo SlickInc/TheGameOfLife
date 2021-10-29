@@ -28,6 +28,7 @@ public class MainGui {
 		frame.setLocationRelativeTo(null);
 		
 		Random r = new Random();
+		Random r2 = new Random();
 
 		
 		randomm = 0;
@@ -86,6 +87,9 @@ public class MainGui {
 			
 		});
 		
+		/**
+		 * turns all buttons white
+		 */
 		CLEAR.addActionListener(new ActionListener() {
 
 			@Override
@@ -98,14 +102,17 @@ public class MainGui {
 			
 			
 		});
-		
+	
+		/**
+		 * randomizes buttons
+		 */
 		RANDOMIZE.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				for (int ran = 0; ran < r.nextInt(50-1+1)+1; ran++ ) {
-					randomm = r.nextInt(50-1+1)+1;
+				for (int ran = 0; ran < r.nextInt(5000-1+1)+1; ran++ ) {
+					randomm = r.nextInt(5000-1+1)+1;
 					button[randomm].setBackground(Color.RED);
 				}
 				
@@ -158,7 +165,7 @@ public class MainGui {
 /**
  * Lays button array out and puts it at the bottom of array		
  */
-		for (int i = 0; i<5000; i++) {
+		for (int i = 0; i<button.length; i++) {
 			button[i] = new JButton("");
 			button[i].setActionCommand(Integer.toString(i));
 			button[i].addActionListener(new ActionListener() {
@@ -174,7 +181,7 @@ public class MainGui {
 					
 					}
 					
-					for(int i = 0; i<5000;i++) {
+					for(int i = 0; i<button.length;i++) {
 						if (booarray[i] == true){
 							button[i].setBackground(Color.BLUE);
 						}
