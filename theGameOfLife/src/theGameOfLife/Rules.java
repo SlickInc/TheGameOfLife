@@ -9,7 +9,7 @@ import javax.swing.*;
 import java.awt.event.*;
 
 public class Rules {	
-	
+	// constractore
 	JLabel label,T1,T2,T3,T4,T5,T6,T7,T8;
 	JFrame frame;
 	JPanel panel;
