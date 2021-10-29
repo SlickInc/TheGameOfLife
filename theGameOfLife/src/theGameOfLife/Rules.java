@@ -61,9 +61,12 @@ public class Rules {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String name = (String)N1.getSelectedItem(); 
-				label.setText(name); 	
-				
+				String name = (String)N1.getSelectedItem();
+				for(int i = 0; i<5000;i++) {
+					if(name.equals("Live")) {
+						
+					}
+				}
 				
 			}
 			
@@ -76,7 +79,7 @@ public class Rules {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String name = (String)N2.getSelectedItem(); 
-				label.setText(name); 
+				
 			}
 			
 		});
@@ -88,7 +91,8 @@ public class Rules {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String name = (String)N3.getSelectedItem(); 
-				label.setText(name); 
+				
+				
 			}
 			
 		});
@@ -101,7 +105,7 @@ public class Rules {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String name = (String)N4.getSelectedItem();
-				label.setText(name); 
+				 
 			}
 			
 		});
@@ -113,7 +117,7 @@ public class Rules {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String name = (String)N5.getSelectedItem(); 
-				label.setText(name); 
+				
 			}
 			
 		});
@@ -127,7 +131,7 @@ public class Rules {
 			public void actionPerformed(ActionEvent e) {
 				String name = (String)N6.getSelectedItem(); 
 
-				label.setText(name); 
+				
 				
 				
 			}
@@ -142,7 +146,7 @@ public class Rules {
 			public void actionPerformed(ActionEvent e) {
 				String name = (String)N7.getSelectedItem(); 
 
-				label.setText(name); 
+				
 				
 				
 			}
@@ -157,8 +161,7 @@ public class Rules {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String name = (String)N8.getSelectedItem(); 
-
-				label.setText(name); 
+				
 				
 				
 			}
@@ -240,4 +243,13 @@ public class Rules {
 	
 
 	}
+	public int checkNeighbors(boolean[] grid, int element) {
+		int n = 0;
+		if(grid[element+1] == true ) {
+			n++;
+		}
+		
+		return n;
+	}
+	
 }
