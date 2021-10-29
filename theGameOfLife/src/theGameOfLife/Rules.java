@@ -9,14 +9,14 @@ import javax.swing.*;
 import java.awt.event.*;
 
 public class Rules {	
-	
+	// constractore
 	JLabel label,T1,T2,T3,T4,T5,T6,T7,T8;
 	JFrame frame;
 	JPanel panel;
 	boolean toggle = false;
 	JComboBox combo,N1,N2,N3,N4,N5,N6,N7,N8;
 	
-	String Neighbors;
+	String n1,n2,n3,n4,n5,n6,n7,n8;
 
 	
 	public Rules() {
@@ -61,8 +61,10 @@ public class Rules {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String name = (String)N1.getSelectedItem(); 
-				label.setText(name); 		
+				String name = (String)N1.getSelectedItem();
+				
+				n1 = name;
+				
 			}
 			
 		});
@@ -74,7 +76,7 @@ public class Rules {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String name = (String)N2.getSelectedItem(); 
-				label.setText(name); 
+				n2=name;
 			}
 			
 		});
@@ -86,7 +88,8 @@ public class Rules {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String name = (String)N3.getSelectedItem(); 
-				label.setText(name); 
+				n3=name;
+				
 			}
 			
 		});
@@ -99,7 +102,7 @@ public class Rules {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String name = (String)N4.getSelectedItem();
-				label.setText(name); 
+				 n4=name;
 			}
 			
 		});
@@ -111,7 +114,7 @@ public class Rules {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String name = (String)N5.getSelectedItem(); 
-				label.setText(name); 
+				n5=name;
 			}
 			
 		});
@@ -124,8 +127,8 @@ public class Rules {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String name = (String)N6.getSelectedItem(); 
-
-				label.setText(name); 
+				n6= name;
+				
 				
 				
 			}
@@ -139,8 +142,8 @@ public class Rules {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String name = (String)N7.getSelectedItem(); 
-
-				label.setText(name); 
+				n7=name;
+				
 				
 				
 			}
@@ -155,8 +158,7 @@ public class Rules {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String name = (String)N8.getSelectedItem(); 
-
-				label.setText(name); 
+				n8=name;
 				
 				
 			}
@@ -237,5 +239,42 @@ public class Rules {
 		frame.setVisible(true);
 	
 
-}
+	}
+	public int checkNeighbors(boolean[] grid, int element) {
+		int n = 0;
+		if(grid[element+1] == true ) {
+			n++;
+		}
+		
+		if(grid[element-1] == true ) {
+			n++;
+		}
+		
+		if(grid[element+50] == true ) {
+			n++;
+		}
+		
+		if(grid[element-50] == true ) {
+			n++;
+		}
+		
+		if(grid[element+51] == true ) {
+			n++;
+		}
+		
+		if(grid[element+49] == true ) {
+			n++;
+		}
+		
+		if(grid[element-51] == true ) {
+			n++;
+		}
+		
+		if(grid[element-49] == true ) {
+			n++;
+		}
+		
+		return n;
+	}
+	
 }

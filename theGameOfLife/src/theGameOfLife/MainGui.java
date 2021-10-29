@@ -141,6 +141,7 @@ public class MainGui {
 		String[] pat = {"Single Cell", "Glider", "Methuselah", "Pentadecathlon","B-Heptomino", "Boat Stretcher", "Switch Engine", "Glider Gun"};
 		patterns = new JComboBox(pat);
 		patterns.setSelectedIndex(0);
+		/*
 		for(int i = 0; i<pat.length; i++) {
 			patterns.addActionListener(new ActionListener(){
 
@@ -153,7 +154,7 @@ public class MainGui {
 			});
 			
 		}
-		
+		*/
 	
 /**
  * boolean array	
@@ -161,9 +162,11 @@ public class MainGui {
 		
 		boolean booarray[];
 		booarray = new boolean[5000];
+
 		
 /**
  * Lays button array out and puts it at the bottom of array		
+ * Runs the patterns class
  */
 		for (int i = 0; i<button.length; i++) {
 			button[i] = new JButton("");
@@ -177,8 +180,9 @@ public class MainGui {
 					switch ((String)patterns.getSelectedItem()) { 
 					case "Single Cell": p.singleCell(booarray);break;
 					case "Glider": p.glider(booarray);break;
-					case "Methuselah": p.methuselah(booarray);
-					
+					case "Methuselah": p.methuselah(booarray);break;
+					case "Pentadecathlon": p.pentadecathlon(booarray);break;
+					case "B-Heptomino": p.bheptomino(booarray);break;
 					}
 					
 					for(int i = 0; i<button.length;i++) {
