@@ -4,7 +4,7 @@ import java.awt.GridBagConstraints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.GridBagLayout;
-
+import java.util.Random;
 import javax.swing.*;
 import java.awt.event.*;
 
@@ -19,6 +19,7 @@ public class MainGui {
 	private JPanel panel;
 	private JButton[] button;
 	private JComboBox patterns;
+	private int randomm;
 	
 	public MainGui() {
 		frame = new JFrame("The Game Of Life");
@@ -26,7 +27,10 @@ public class MainGui {
 		frame.setSize(1280,720);
 		frame.setLocationRelativeTo(null);
 		
+		Random r = new Random();
 
+		
+		randomm = 0;
 		int x = 0;
 		int y = 0;
 		
@@ -87,7 +91,9 @@ public class MainGui {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				
+				for (int i = 0; i<5000; i++) {
+					button[i].setBackground(Color.WHITE);
+				}
 			}
 			
 			
@@ -97,6 +103,12 @@ public class MainGui {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
+				for (int ran = 0; ran < r.nextInt(50-1+1)+1; ran++ ) {
+					randomm = r.nextInt(50-1+1)+1;
+					button[randomm].setBackground(Color.RED);
+				}
+				
 				Rules run = new Rules();
 				
 			}
