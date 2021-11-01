@@ -1,23 +1,21 @@
 package theGameOfLife;
 
-import java.awt.GridBagConstraints;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.GridBagLayout;
 
+import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
 public class Rules {	
-	// constractore
-	JLabel label,T1,T2,T3,T4,T5,T6,T7,T8;
+	// constructor
+	JLabel label,T0,T1,T2,T3,T4,T5,T6,T7,T8;
 	JFrame frame;
 	JPanel panel;
 	boolean toggle = false;
-	JComboBox combo,N1,N2,N3,N4,N5,N6,N7,N8;
+	JComboBox combo,N0,N1,N2,N3,N4,N5,N6,N7,N8;
 	
-	String Neighbors;
-	
+	String Neighbors;	
+	String[] n = new String[9];
+
 
 	
 	public Rules() {
@@ -31,7 +29,9 @@ public class Rules {
 		GridBagConstraints c = new GridBagConstraints();
 		
 		String[] names = {"Live", "Die", "Born"};
-		// hay
+		N0 = new JComboBox(names);
+		N0.setSelectedIndex(0);
+		
 		N1 = new JComboBox(names);
 		N1.setSelectedIndex(0);
 		
@@ -56,114 +56,27 @@ public class Rules {
 		N8 = new JComboBox(names);
 		N8.setSelectedIndex(0);
 		
-		T1 = new JLabel(" One Neighbors: ");
-		
-		N1.addActionListener(new ActionListener() {
+		T0 = new JLabel(" Zero Neighbors: ");
 
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				String name = (String)N1.getSelectedItem();
-				
-				
-			}
-			
-		});
+		T1 = new JLabel(" One Neighbors: ");
 		
 		T2 = new JLabel(" Two Neighbors: ");
 		
-		N2.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				String name = (String)N2.getSelectedItem(); 
-				
-			}
-			
-		});
-		
 		T3 = new JLabel("    Three Neighbors: ");
-		
-		N3.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				String name = (String)N3.getSelectedItem(); 
-				
-				
-			}
-			
-		});
-		
 		
 		T4 = new JLabel("   Four Neighbors: ");
 		
-		N4.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				String name = (String)N4.getSelectedItem();
-				 
-			}
-			
-		});
-		
 		T5 = new JLabel("  Five Neighbors: ");
-		
-		N5.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				String name = (String)N5.getSelectedItem(); 
-				
-			}
-			
-		});
-		
 		
 		T6 = new JLabel("Six Neighbors: ");
 		
-		N6.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				String name = (String)N6.getSelectedItem(); 
-
-				
-				
-				
-			}
-			
-		});
-		
 		T7 = new JLabel("    Seven Neighbors: ");
 		
-		N7.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				String name = (String)N7.getSelectedItem(); 
-
-				
-				
-				
-			}
-			
-		});
-		
-		
 		T8 = new JLabel("   Eight Neighbors: ");
-		
-		N8.addActionListener(new ActionListener() {
 
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				String name = (String)N8.getSelectedItem(); 
-				
-				
-				
-			}
-			
-		});
+		c.gridx = 1;
+		c.gridy = 0;
+		panel.add(N0,c);
 		
 		c.gridx = 1;
 		c.gridy = 1;
@@ -200,7 +113,9 @@ public class Rules {
 		
 		
 		
-		
+		c.gridx = 2;
+		c.gridy = 0;
+		panel.add(T0,c);
 		
 		c.gridx = 2;
 		c.gridy = 1;
@@ -236,18 +151,133 @@ public class Rules {
 		
 		
 		frame.setContentPane(panel);
-		frame.setVisible(true);
+		
 	
 
 	}
-	public boolean[] game(boolean[] grid) {
-		if(n[i]==1){
-			if(n1 == "die") {
-				grid[i] = false;
-			}else if(n1 == "born") {
-				grid[i] = true;
+	public void showrules() {
+		frame.setVisible(true);
+	}
+	public void saveRules() {
+		N0.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String name = (String)N0.getSelectedItem(); 
+				n[0] = name;
+				T0.setText(n[0]);
+				
+			}
+			
+		});
+		N1.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String name = (String)N1.getSelectedItem(); 
+				n[1] = name;
+				
+				
+			}
+			
+		});
+		N2.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String name = (String)N2.getSelectedItem(); 
+				n[2] = name;
+				
+				
+			}
+			
+		});
+		N3.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String name = (String)N3.getSelectedItem(); 
+				n[3] = name;
+				
+				
+			}
+			
+		});
+		N4.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String name = (String)N4.getSelectedItem(); 
+				n[4] = name;
+				
+				
+			}
+			
+		});
+		N5.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String name = (String)N5.getSelectedItem(); 
+				n[5] = name;
+				
+				
+			}
+			
+		});
+		N6.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String name = (String)N6.getSelectedItem(); 
+				n[6] = name;
+				
+				
+			}
+			
+		});
+		N7.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String name = (String)N7.getSelectedItem(); 
+				n[7] = name;
+				
+				
+			}
+			
+		});
+		N8.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String name = (String)N8.getSelectedItem(); 
+				n[8] = name;
+				
+				
+			}
+			
+		});
+	}
+	/**
+	 * Determines which cells die and which ones live
+	 * @param grid
+	 * @param count
+	 * @return grid
+	 */
+	public boolean[] gameRun(boolean[] grid, int[] count) {
+		for(int i = 0; i<5000;i++) {
+			for(int e = 1;e<=8;e++) {
+				if(count[i] == e){
+					if(n[e] == "die") {
+						grid[i] = false;
+					}else if(n[e] == "born") {
+						grid[i] = true;
+					}
+				}
 			}
 		}
+		return grid;
 	}
 	/**
 	 * checks amount of neighbors
@@ -256,41 +286,66 @@ public class Rules {
 	 * @return
 	 */
 	public int[] checkNeighbors(boolean[] grid) {
-		int[] n = null;
+		int[] n= new int[5000];
 		for(int i = 0;i<5000;i++) {
 			n[i]= 0;
 		}
 		for(int i = 0;i<5000;i++) {
-			if(grid[i+1] == true ) {
-				n[i]++;
+			try {
+				if(grid[i+1] == true ) {
+					n[i]++;
+				}
+			}catch(Exception e) {
+				
 			}
-			
-			if(grid[i-1] == true ) {
-				n[i]++;
+			try {
+				if(grid[i-1] == true ) {
+					n[i]++;
+				}
+			}catch(Exception e) {
+				
 			}
-			
-			if(grid[i+50] == true ) {
-				n[i]++;
+			try {
+				if(grid[i+50] == true ) {
+					n[i]++;
+				}
+			}catch(Exception e) {
+				
 			}
-			
-			if(grid[i-50] == true ) {
-				n[i]++;
+			try {
+				if(grid[i-50] == true ) {
+					n[i]++;
+				}
+			}catch(Exception e) {
+				
 			}
-			
-			if(grid[i+51] == true ) {
-				n[i]++;
+			try {
+				if(grid[i+51] == true ) {
+					n[i]++;
+				}
+			}catch(Exception e) {
+					
 			}
-			
-			if(grid[i+49] == true ) {
-				n[i]++;
+			try {
+				if(grid[i+49] == true ) {
+					n[i]++;
+				}
+			}catch(Exception e) {
+				
 			}
-			
-			if(grid[i-51] == true ) {
-				n[i]++;
+			try {
+				if(grid[i-51] == true ) {
+					n[i]++;
+				}
+			}catch(Exception e) {
+				
 			}
-			
-			if(grid[i-49] == true ) {
-				n[i]++;
+			try {
+				if(grid[i-49] == true ) {
+					n[i]++;
+				}
+			}catch(Exception e) {
+				
 			}
 		}
 		

@@ -1,10 +1,6 @@
 package theGameOfLife;
-import java.awt.Color;
-import java.awt.GridBagConstraints;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.GridBagLayout;
 
+import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
@@ -97,7 +93,7 @@ public class MainGui {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Rules run = new Rules();
+				
 				
 			}
 			
@@ -106,11 +102,11 @@ public class MainGui {
 		
 		
 		RULES.addActionListener(new ActionListener() {
-
+			Rules run1 = new Rules();
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Rules run1 = new Rules();
-				
+				run1.showrules();
+				run1.saveRules();
 			}
 			
 			
@@ -149,6 +145,7 @@ public class MainGui {
  * Lays button array out and puts it at the bottom of array		
  * Runs the patterns class
  */
+		Rules rules = new Rules();
 		for (int i = 0; i<5000; i++) {
 			button[i] = new JButton("");
 			button[i].setActionCommand(Integer.toString(i));
@@ -156,6 +153,7 @@ public class MainGui {
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
+					
 					int num = Integer.parseInt(e.getActionCommand());
 					Patterns p = new Patterns(num);
 					switch ((String)patterns.getSelectedItem()) { 
@@ -165,7 +163,7 @@ public class MainGui {
 					case "Pentadecathlon": p.pentadecathlon(booarray);break;
 					case "B-Heptomino": p.bheptomino(booarray);break;
 					}
-					
+					rules.gameRun(booarray, rules.checkNeighbors(booarray));
 					for(int i = 0; i<5000;i++) {
 						if (booarray[i] == true){
 							button[i].setBackground(Color.BLUE);
