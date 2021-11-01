@@ -183,6 +183,7 @@ public class MainGui {
 					case "Methuselah": p.methuselah(booarray);break;
 					case "Pentadecathlon": p.pentadecathlon(booarray);break;
 					case "B-Heptomino": p.bheptomino(booarray);break;
+					case "Boat Stretcher":p.boatstretcher(booarray);break;
 					}
 					
 					for(int i = 0; i<button.length;i++) {
