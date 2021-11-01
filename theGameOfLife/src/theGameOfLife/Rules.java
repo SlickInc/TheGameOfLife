@@ -17,6 +17,7 @@ public class Rules {
 	JComboBox combo,N1,N2,N3,N4,N5,N6,N7,N8;
 	
 	String Neighbors;
+	
 
 	
 	public Rules() {
@@ -62,11 +63,7 @@ public class Rules {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String name = (String)N1.getSelectedItem();
-				for(int i = 0; i<5000;i++) {
-					if(name.equals("Live")) {
-						
-					}
-				}
+				
 				
 			}
 			
@@ -243,38 +240,58 @@ public class Rules {
 	
 
 	}
-	public int checkNeighbors(boolean[] grid, int element) {
-		int n = 0;
-		if(grid[element+1] == true ) {
-			n++;
+	public boolean[] game(boolean[] grid) {
+		if(n[i]==1){
+			if(n1 == "die") {
+				grid[i] = false;
+			}else if(n1 == "born") {
+				grid[i] = true;
+			}
 		}
-		
-		if(grid[element-1] == true ) {
-			n++;
+	}
+	/**
+	 * checks amount of neighbors
+	 * @param grid
+	 * @param element
+	 * @return
+	 */
+	public int[] checkNeighbors(boolean[] grid) {
+		int[] n = null;
+		for(int i = 0;i<5000;i++) {
+			n[i]= 0;
 		}
-		
-		if(grid[element+50] == true ) {
-			n++;
-		}
-		
-		if(grid[element-50] == true ) {
-			n++;
-		}
-		
-		if(grid[element+51] == true ) {
-			n++;
-		}
-		
-		if(grid[element+49] == true ) {
-			n++;
-		}
-		
-		if(grid[element-51] == true ) {
-			n++;
-		}
-		
-		if(grid[element-49] == true ) {
-			n++;
+		for(int i = 0;i<5000;i++) {
+			if(grid[i+1] == true ) {
+				n[i]++;
+			}
+			
+			if(grid[i-1] == true ) {
+				n[i]++;
+			}
+			
+			if(grid[i+50] == true ) {
+				n[i]++;
+			}
+			
+			if(grid[i-50] == true ) {
+				n[i]++;
+			}
+			
+			if(grid[i+51] == true ) {
+				n[i]++;
+			}
+			
+			if(grid[i+49] == true ) {
+				n[i]++;
+			}
+			
+			if(grid[i-51] == true ) {
+				n[i]++;
+			}
+			
+			if(grid[i-49] == true ) {
+				n[i]++;
+			}
 		}
 		
 		return n;
