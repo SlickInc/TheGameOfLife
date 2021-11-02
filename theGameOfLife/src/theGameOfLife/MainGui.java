@@ -80,8 +80,10 @@ public class MainGui {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				go(booarray);
-				
+				boolean stop = false;
+				do {
+					go(booarray);
+				}while(stop == false);
 			}
 			
 			
