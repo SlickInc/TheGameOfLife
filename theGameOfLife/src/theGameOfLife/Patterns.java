@@ -68,6 +68,7 @@ public class Patterns {
 		}
 		return grid;
 	}
+
 	public boolean[] boatstretcher(boolean grid[]) {
 		try {
 			grid[x] = true;
