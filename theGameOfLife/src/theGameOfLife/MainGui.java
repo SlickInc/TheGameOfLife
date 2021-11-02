@@ -202,6 +202,8 @@ public class MainGui {
 					case "Pentadecathlon": p.pentadecathlon(booarray);break;
 					case "B-Heptomino": p.bheptomino(booarray);break;
 					case "Boat Stretcher":p.boatstretcher(booarray);break;
+					case "Switch Engine" :p.swtichengine(booarray);break;
+					case "Glider run" :p.gliderrun(booarray);break;
 					}
 
 					for(int i = 0; i<button.length;i++) {
