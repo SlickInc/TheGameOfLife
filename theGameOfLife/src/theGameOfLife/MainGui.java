@@ -27,7 +27,7 @@ public class MainGui {
 	private JComboBox patterns;
 	private int randomm;
 	
-	public MainGui() {
+	public MainGui(){
 		frame = new JFrame("The Game Of Life");
 		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
 		frame.setSize(1280,720);
@@ -81,9 +81,14 @@ public class MainGui {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				boolean stop = false;
-				do {
+				//do {
 					go(booarray);
-				}while(stop == false);
+					try {
+						Thread.sleep(200);
+					} catch (InterruptedException e1) {
+						e1.printStackTrace();
+					}
+				//}while(stop == false);
 			}
 			
 			
