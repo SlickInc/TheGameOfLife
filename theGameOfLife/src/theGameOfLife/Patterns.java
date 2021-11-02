@@ -147,6 +147,11 @@ public class Patterns {
 		}
 		return grid;
 	}
+	/**
+	 * this does not work
+	 * @param grid
+	 * @return
+	 */
 	public boolean[] gliderrun(boolean grid[]) {
 		try {
 			grid[x] = true;
