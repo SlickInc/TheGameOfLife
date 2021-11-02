@@ -1,13 +1,23 @@
 package theGameOfLife;
 
+
 import java.awt.*;
+
+import java.awt.Color;
+import java.awt.GridBagConstraints;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.GridBagLayout;
+import java.util.Random;
+
 import javax.swing.*;
 import java.awt.event.*;
+
 
 public class MainGui {
 	//This will house the main frame, the grid, the Start, Stop, etc buttons, the ComboBox for pre-made patterns
 	
-	
+	Rules rules = new Rules();
 	private JFrame frame;
 	private JLabel label;
 	private JPanel bottom;
@@ -15,6 +25,7 @@ public class MainGui {
 	private JPanel panel;
 	private JButton[] button;
 	private JComboBox patterns;
+	private int randomm;
 	
 	public MainGui() {
 		frame = new JFrame("The Game Of Life");
@@ -22,7 +33,11 @@ public class MainGui {
 		frame.setSize(1280,720);
 		frame.setLocationRelativeTo(null);
 		
+		Random r = new Random();
+		Random r2 = new Random();
 
+		
+		randomm = 0;
 		int x = 0;
 		int y = 0;
 		
@@ -52,15 +67,20 @@ public class MainGui {
 		JButton CLEAR = new JButton("Clear");
 		JButton RANDOMIZE = new JButton("Randomize");
 		JButton RULES = new JButton("Rules");
+		
+		
+		/**
+		 * boolean array	
+		 */
+				
+		boolean booarray[];
+		booarray = new boolean[5000];
 
-		
-		
-		
 		START.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				go(booarray);
 				
 			}
 			
@@ -78,22 +98,37 @@ public class MainGui {
 			
 		});
 		
+		/**
+		 * turns all buttons white
+		 */
 		CLEAR.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				
+				for (int i = 0; i<5000; i++) {
+					button[i].setBackground(Color.WHITE);
+					booarray[i] = false;
+				}
 			}
 			
 			
 		});
-		
+	
+		/**
+		 * randomizes buttons
+		 */
 		RANDOMIZE.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
+				for (int ran = 0; ran < r.nextInt(5000-1+1)+1; ran++ ) {
+					randomm = r.nextInt(4999-1+1)+1;
+					button[randomm].setBackground(Color.RED);
+					booarray[randomm] = true;
+				}
+
 				
 			}
 			
@@ -102,11 +137,11 @@ public class MainGui {
 		
 		
 		RULES.addActionListener(new ActionListener() {
-			Rules run1 = new Rules();
+			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				run1.showrules();
-				run1.saveRules();
+				rules.showrules();
+				rules.saveRules();
 			}
 			
 			
@@ -133,20 +168,17 @@ public class MainGui {
 		}
 		*/
 	
-/**
- * boolean array	
- */
-		
-		boolean booarray[];
-		booarray = new boolean[5000];
 
 		
 /**
  * Lays button array out and puts it at the bottom of array		
  * Runs the patterns class
  */
-		Rules rules = new Rules();
-		for (int i = 0; i<5000; i++) {
+
+		
+
+		for (int i = 0; i<button.length; i++) {
+
 			button[i] = new JButton("");
 			button[i].setActionCommand(Integer.toString(i));
 			button[i].addActionListener(new ActionListener() {
@@ -162,11 +194,12 @@ public class MainGui {
 					case "Methuselah": p.methuselah(booarray);break;
 					case "Pentadecathlon": p.pentadecathlon(booarray);break;
 					case "B-Heptomino": p.bheptomino(booarray);break;
+					case "Boat Stretcher":p.boatstretcher(booarray);break;
 					}
-					rules.gameRun(booarray, rules.checkNeighbors(booarray));
-					for(int i = 0; i<5000;i++) {
+
+					for(int i = 0; i<button.length;i++) {
 						if (booarray[i] == true){
-							button[i].setBackground(Color.BLUE);
+							button[i].setBackground(Color.RED);
 						}
 					}
 					
@@ -240,5 +273,16 @@ public class MainGui {
 	
 		
 	}
+	public void go(boolean[] grid) {
+		rules.gameRun(grid, rules.checkNeighbors(grid));
+		for(int i = 0; i<button.length;i++) {
+			if (grid[i] == false){
+				button[i].setBackground(Color.white);
+			}else {
+				button[i].setBackground(Color.RED);
+			}
+		}
+	}
+	
 }
 

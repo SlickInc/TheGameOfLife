@@ -30,31 +30,40 @@ public class Rules {
 		
 		String[] names = {"Live", "Die", "Born"};
 		N0 = new JComboBox(names);
-		N0.setSelectedIndex(0);
+		N0.setSelectedIndex(1);
+		n[0] = names[1];
 		
 		N1 = new JComboBox(names);
-		N1.setSelectedIndex(0);
+		N1.setSelectedIndex(1);
+		n[1] = names[1];
 		
 		N2 = new JComboBox(names);
 		N2.setSelectedIndex(0);
+		n[2] = names[0];
 		
 		N3 = new JComboBox(names);
-		N3.setSelectedIndex(0);
+		N3.setSelectedIndex(2);
+		n[3] = names[2];
 		
 		N4 = new JComboBox(names);
-		N4.setSelectedIndex(0);
+		N4.setSelectedIndex(1);
+		n[4] = names[1];
 		
 		N5 = new JComboBox(names);
-		N5.setSelectedIndex(0);
+		N5.setSelectedIndex(1);
+		n[5] = names[1];
 		
 		N6 = new JComboBox(names);
-		N6.setSelectedIndex(0);
+		N6.setSelectedIndex(1);
+		n[6] = names[1];
 		
 		N7 = new JComboBox(names);
-		N7.setSelectedIndex(0);
+		N7.setSelectedIndex(1);
+		n[7] = names[1];
 		
 		N8 = new JComboBox(names);
-		N8.setSelectedIndex(0);
+		N8.setSelectedIndex(1);
+		n[8] = names[1];
 		
 		T0 = new JLabel(" Zero Neighbors: ");
 
@@ -165,7 +174,6 @@ public class Rules {
 			public void actionPerformed(ActionEvent e) {
 				String name = (String)N0.getSelectedItem(); 
 				n[0] = name;
-				T0.setText(n[0]);
 				
 			}
 			
@@ -175,8 +183,7 @@ public class Rules {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String name = (String)N1.getSelectedItem(); 
-				n[1] = name;
-				
+				n[1] = name;	
 				
 			}
 			
@@ -188,7 +195,6 @@ public class Rules {
 				String name = (String)N2.getSelectedItem(); 
 				n[2] = name;
 				
-				
 			}
 			
 		});
@@ -198,7 +204,6 @@ public class Rules {
 			public void actionPerformed(ActionEvent e) {
 				String name = (String)N3.getSelectedItem(); 
 				n[3] = name;
-				
 				
 			}
 			
@@ -210,7 +215,6 @@ public class Rules {
 				String name = (String)N4.getSelectedItem(); 
 				n[4] = name;
 				
-				
 			}
 			
 		});
@@ -220,7 +224,6 @@ public class Rules {
 			public void actionPerformed(ActionEvent e) {
 				String name = (String)N5.getSelectedItem(); 
 				n[5] = name;
-				
 				
 			}
 			
@@ -232,7 +235,6 @@ public class Rules {
 				String name = (String)N6.getSelectedItem(); 
 				n[6] = name;
 				
-				
 			}
 			
 		});
@@ -243,7 +245,6 @@ public class Rules {
 				String name = (String)N7.getSelectedItem(); 
 				n[7] = name;
 				
-				
 			}
 			
 		});
@@ -253,7 +254,6 @@ public class Rules {
 			public void actionPerformed(ActionEvent e) {
 				String name = (String)N8.getSelectedItem(); 
 				n[8] = name;
-				
 				
 			}
 			
@@ -267,11 +267,11 @@ public class Rules {
 	 */
 	public boolean[] gameRun(boolean[] grid, int[] count) {
 		for(int i = 0; i<5000;i++) {
-			for(int e = 1;e<=8;e++) {
+			for(int e = 0;e<=8;e++) {
 				if(count[i] == e){
-					if(n[e] == "die") {
+					if(n[e] == "Die") {
 						grid[i] = false;
-					}else if(n[e] == "born") {
+					}else if(n[e] == "Born") {
 						grid[i] = true;
 					}
 				}
