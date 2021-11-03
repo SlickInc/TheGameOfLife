@@ -54,18 +54,13 @@ public class MainGui {
 
 		
 		button = new JButton[5000];
+		
 		label = new JLabel("");
 
 		
-	
-		
-
-	
-
-		
-/**
- * Control Buttons		
- */
+		/**
+		 * Control Buttons		
+		 */
 		JButton STOP = new JButton("Stop");
 		JButton START = new JButton("Start");
 		JButton CLEAR = new JButton("Clear");
@@ -79,7 +74,10 @@ public class MainGui {
 				
 		boolean booarray[];
 		booarray = new boolean[5000];
-
+		
+		/**
+		 * Starts the program
+		 */
 		START.addActionListener(new ActionListener() {
 			
 			@Override
@@ -91,6 +89,7 @@ public class MainGui {
 					public void run() {
 						go(booarray);
 						
+						//stops the timer
 						STOP.addActionListener(new ActionListener() {
 
 							@Override
@@ -116,7 +115,7 @@ public class MainGui {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				//loops to clear the board
 				for (int i = 0; i<5000; i++) {
 					button[i].setBackground(Color.WHITE);
 					booarray[i] = false;
@@ -133,7 +132,7 @@ public class MainGui {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				//loops to randomize the board. Can be pressed multiple times
 				for (int ran = 0; ran < r.nextInt(5000-1+1)+1; ran++ ) {
 					randomm = r.nextInt(4999-1+1)+1;
 					button[randomm].setBackground(Color.RED);
@@ -145,10 +144,11 @@ public class MainGui {
 			
 			
 		});
-		
+		/**
+		 * produces rule GUI
+		 */
 		
 		RULES.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				rules.showrules();
@@ -158,35 +158,19 @@ public class MainGui {
 			
 		});
 		
-/**
- * Sets up premade patterns
- */
+		/**
+		 * Sets up premade patterns
+		 */
 		String[] pat = {"Single Cell", "Glider", "Methuselah", "Pentadecathlon","B-Heptomino", "Boat Stretcher", "Switch Engine", "Glider Gun"};
 		patterns = new JComboBox(pat);
 		patterns.setSelectedIndex(0);
-		/*
-		for(int i = 0; i<pat.length; i++) {
-			patterns.addActionListener(new ActionListener(){
-
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					
-					
-				}
-				
-			});
-			
-		}
-		*/
 	
 
 		
-/**
- * Lays button array out and puts it at the bottom of array		
- * Runs the patterns class
- */
-
-		
+		/**
+		 * Lays button array out and puts it at the bottom of array		
+		 * Runs the patterns class
+		 */
 
 		for (int i = 0; i<button.length; i++) {
 
@@ -199,6 +183,8 @@ public class MainGui {
 					
 					int num = Integer.parseInt(e.getActionCommand());
 					Patterns p = new Patterns(num);
+					
+					//determines which pattern to place
 					switch ((String)patterns.getSelectedItem()) { 
 					case "Single Cell": p.singleCell(booarray);break;
 					case "Glider": p.glider(booarray);break;
@@ -209,7 +195,7 @@ public class MainGui {
 					case "Switch Engine" :p.swtichengine(booarray);break;
 					case "Glider Gun" :p.glidergun(booarray);break;
 					}
-
+					//sets the right buttons red
 					for(int i = 0; i<button.length;i++) {
 						if (booarray[i] == true){
 							button[i].setBackground(Color.RED);
@@ -286,6 +272,10 @@ public class MainGui {
 	
 		
 	}
+	/**
+	 * determines whether to clear a button or set it to red
+	 * @param grid
+	 */
 	public void go(boolean[] grid) {
 		rules.gameRun(grid, rules.checkNeighbors(grid));
 		for(int i = 0; i<button.length;i++) {
