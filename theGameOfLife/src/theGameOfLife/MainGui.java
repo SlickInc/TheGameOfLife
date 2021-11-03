@@ -82,6 +82,13 @@ public class MainGui {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+
+				boolean stop = true;
+				do {
+					go(booarray);
+					System.out.println("go");
+				}while(stop == false);
+
 				Timer timer = new Timer();
 				TimerTask task = new TimerTask() {
 
@@ -103,6 +110,7 @@ public class MainGui {
 				};
 				timer.schedule(task, new Date(), 100);
 				
+
 			}
 		});
 		
