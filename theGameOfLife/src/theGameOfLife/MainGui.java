@@ -31,7 +31,7 @@ public class MainGui {
 	private int randomm;
 	
 	public MainGui(){
-		Timer timer = new Timer();
+		
 		frame = new JFrame("The Game Of Life");
 		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
 		frame.setSize(1280,720);
@@ -81,9 +81,10 @@ public class MainGui {
 		booarray = new boolean[5000];
 
 		START.addActionListener(new ActionListener() {
-
+			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				Timer timer = new Timer();
 				TimerTask task = new TimerTask() {
 
 					@Override
@@ -95,6 +96,7 @@ public class MainGui {
 							@Override
 							public void actionPerformed(ActionEvent e) {
 								timer.cancel();
+								timer.purge();
 							}
 						});
 					}
