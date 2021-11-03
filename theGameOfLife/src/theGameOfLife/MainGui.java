@@ -89,6 +89,7 @@ public class MainGui {
 					@Override
 					public void run() {
 						go(booarray);
+						
 						STOP.addActionListener(new ActionListener() {
 
 							@Override
@@ -102,8 +103,6 @@ public class MainGui {
 				timer.schedule(task, new Date(), 100);
 				
 			}
-			
-			
 		});
 		
 		
