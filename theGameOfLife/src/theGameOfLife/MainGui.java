@@ -80,9 +80,10 @@ public class MainGui {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				boolean stop = false;
+				boolean stop = true;
 				do {
 					go(booarray);
+					System.out.println("go");
 				}while(stop == false);
 			}
 			
