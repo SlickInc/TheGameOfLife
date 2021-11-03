@@ -199,9 +199,19 @@ public class MainGui {
 					case "Methuselah": p.methuselah(booarray);break;
 					case "Pentadecathlon": p.pentadecathlon(booarray);break;
 					case "B-Heptomino": p.bheptomino(booarray);break;
+<<<<<<< HEAD
 					case "Boat Stretcher":p.boatstretcher(booarray);break;
+
+=======
+					case "Boat Stretcher":p.boatstretcher(booarray);break;
+>>>>>>> branch 'main' of https://github.com/SlickInc/TheGameOfLife.git
 					case "Switch Engine" :p.swtichengine(booarray);break;
+<<<<<<< HEAD
 					case "Glider Gun" :p.glidergun(booarray);break;
+
+=======
+					case "Glider Gun" :p.glidergun(booarray);break;
+>>>>>>> branch 'main' of https://github.com/SlickInc/TheGameOfLife.git
 					}
 					//sets the right buttons red
 					for(int i = 0; i<button.length;i++) {
