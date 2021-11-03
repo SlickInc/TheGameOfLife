@@ -31,7 +31,7 @@ public class MainGui {
 	private int randomm;
 	
 	public MainGui(){
-		
+		//sets up game components
 		frame = new JFrame("The Game Of Life");
 		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
 		frame.setSize(1280,720);
@@ -84,6 +84,13 @@ public class MainGui {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+
+				boolean stop = true;
+				do {
+					go(booarray);
+					System.out.println("go");
+				}while(stop == false);
+
 				Timer timer = new Timer();
 				TimerTask task = new TimerTask() {
 
@@ -104,6 +111,7 @@ public class MainGui {
 				};
 				timer.schedule(task, new Date(), 100);
 				
+
 			}
 		});
 		
@@ -205,11 +213,19 @@ public class MainGui {
 					case "Methuselah": p.methuselah(booarray);break;
 					case "Pentadecathlon": p.pentadecathlon(booarray);break;
 					case "B-Heptomino": p.bheptomino(booarray);break;
+<<<<<<< HEAD
 					case "Boat Stretcher":p.boatstretcher(booarray);break;
 
+=======
+					case "Boat Stretcher":p.boatstretcher(booarray);break;
+>>>>>>> branch 'main' of https://github.com/SlickInc/TheGameOfLife.git
 					case "Switch Engine" :p.swtichengine(booarray);break;
+<<<<<<< HEAD
 					case "Glider Gun" :p.glidergun(booarray);break;
 
+=======
+					case "Glider Gun" :p.glidergun(booarray);break;
+>>>>>>> branch 'main' of https://github.com/SlickInc/TheGameOfLife.git
 					}
 
 					for(int i = 0; i<button.length;i++) {
