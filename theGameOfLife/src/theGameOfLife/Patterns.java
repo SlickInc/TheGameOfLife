@@ -183,15 +183,15 @@ public class Patterns {
 			grid[x+196] = true;
 			grid[x+191] = true;
 			grid[x+160] = true;
+			
 			grid[x+210] = true;
-		
-			grid[x+208] = true;
+			grid[x+209] = true;
 			grid[x+192] = true;
 			grid[x+242] = true;
 			grid[x+292] = true;
 			grid[x+187] = true;
-			grid[x+177] = true;
-			grid[x+176] = true;
+			grid[x+227] = true;
+			grid[x+226] = true;
 			grid[x+250] = true;
 			grid[x+249] = true;
 			grid[x+248] = true;
@@ -199,17 +199,17 @@ public class Patterns {
 			
 			
 			grid[x+237] = true;
-			grid[x+227] = true;
-			grid[x+226] = true;
+			grid[x+277] = true;
+			grid[x+276] = true;
 			grid[x+300] = true;
 		
 			grid[x+291] = true;
 			
 			grid[x+287] = true;
-			
-			grid[x+340] = true;
-			grid[x+338] = true;
-			grid[x+389] = true;
+			//fixed
+			grid[x+339] = true;
+			grid[x+337] = true;
+			grid[x+388] = true;
 		}catch(Exception e){
 			
 		}
