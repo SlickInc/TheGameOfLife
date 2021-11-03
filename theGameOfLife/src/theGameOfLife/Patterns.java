@@ -139,9 +139,9 @@ public class Patterns {
 			grid[x+150] = true;
 			grid[x+151] = true;
 			grid[x+152] = true;
-			grid[x+259] = true;
-			grid[x+260] = true;
-			grid[x+309] = true;
+			grid[x+273] = true;
+			grid[x+274] = true;
+			grid[x+323] = true;
 		}catch(Exception e){
 			
 		}
