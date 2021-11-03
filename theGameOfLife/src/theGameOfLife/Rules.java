@@ -20,14 +20,16 @@ public class Rules {
 	
 	public Rules() {
 		
-		
+		// frame
 		frame = new JFrame("The Game Of Life");
 		frame.setSize(400,400);
 		frame.setLocationRelativeTo(null);
 		
+		// added a grid bag layout to the panel 
 		panel = new JPanel(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		
+		// array for combo boxes for the rules 
 		String[] names = {"Live", "Die", "Born"};
 		N0 = new JComboBox(names);
 		N0.setSelectedIndex(1);
@@ -65,6 +67,7 @@ public class Rules {
 		N8.setSelectedIndex(1);
 		n[8] = names[1];
 		
+		// adding some names for the rules options (0-8 Neighbors)
 		T0 = new JLabel(" Zero Neighbors: ");
 
 		T1 = new JLabel(" One Neighbors: ");
@@ -82,7 +85,8 @@ public class Rules {
 		T7 = new JLabel("    Seven Neighbors: ");
 		
 		T8 = new JLabel("   Eight Neighbors: ");
-
+		
+		// organizing options in the rules frame 
 		c.gridx = 1;
 		c.gridy = 0;
 		panel.add(N0,c);
@@ -167,6 +171,7 @@ public class Rules {
 	public void showrules() {
 		frame.setVisible(true);
 	}
+	// added the actions to the drop down 
 	public void saveRules() {
 		N0.addActionListener(new ActionListener() {
 
