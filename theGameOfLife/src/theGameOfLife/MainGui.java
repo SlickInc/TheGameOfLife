@@ -2,12 +2,15 @@ package theGameOfLife;
 
 
 import java.awt.*;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.GridBagLayout;
+import java.util.Date;
 import java.util.Random;
 
 import javax.swing.*;
@@ -28,6 +31,7 @@ public class MainGui {
 	private int randomm;
 	
 	public MainGui(){
+		Timer timer = new Timer();
 		frame = new JFrame("The Game Of Life");
 		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
 		frame.setSize(1280,720);
@@ -80,30 +84,29 @@ public class MainGui {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				boolean stop = false;
-				//do {
-					go(booarray);
-					try {
-						Thread.sleep(200);
-					} catch (InterruptedException e1) {
-						e1.printStackTrace();
+				TimerTask task = new TimerTask() {
+
+					@Override
+					public void run() {
+						go(booarray);
+						STOP.addActionListener(new ActionListener() {
+
+							@Override
+							public void actionPerformed(ActionEvent e) {
+								timer.cancel();
+							}
+						});
 					}
-				//}while(stop == false);
+					
+				};
+				timer.schedule(task, new Date(), 100);
+				
 			}
 			
 			
 		});
 		
-		STOP.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				
-				
-			}
-			
-			
-		});
+		
 		
 		/**
 		 * turns all buttons white
@@ -202,8 +205,6 @@ public class MainGui {
 					case "Pentadecathlon": p.pentadecathlon(booarray);break;
 					case "B-Heptomino": p.bheptomino(booarray);break;
 					case "Boat Stretcher":p.boatstretcher(booarray);break;
-					case "Switch Engine" :p.swtichengine(booarray);break;
-					case "Glider run" :p.gliderrun(booarray);break;
 					}
 
 					for(int i = 0; i<button.length;i++) {
