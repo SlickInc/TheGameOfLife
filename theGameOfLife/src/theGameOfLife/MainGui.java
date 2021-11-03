@@ -2,12 +2,15 @@ package theGameOfLife;
 
 
 import java.awt.*;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.GridBagLayout;
+import java.util.Date;
 import java.util.Random;
 
 import javax.swing.*;
@@ -27,7 +30,8 @@ public class MainGui {
 	private JComboBox patterns;
 	private int randomm;
 	
-	public MainGui() {
+	public MainGui(){
+		
 		frame = new JFrame("The Game Of Life");
 		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
 		frame.setSize(1280,720);
@@ -77,27 +81,33 @@ public class MainGui {
 		booarray = new boolean[5000];
 
 		START.addActionListener(new ActionListener() {
-
+			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				Timer timer = new Timer();
+				TimerTask task = new TimerTask() {
+
+					@Override
+					public void run() {
+						go(booarray);
+						
+						STOP.addActionListener(new ActionListener() {
+
+							@Override
+							public void actionPerformed(ActionEvent e) {
+								timer.cancel();
+								timer.purge();
+							}
+						});
+					}
+					
+				};
+				timer.schedule(task, new Date(), 100);
 				
-				
-					go(booarray);
-				
-			
 			}
 		});
 		
-		STOP.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				
-				
-			}
-			
-			
-		});
+		
 		
 		/**
 		 * turns all buttons white
@@ -196,8 +206,11 @@ public class MainGui {
 					case "Pentadecathlon": p.pentadecathlon(booarray);break;
 					case "B-Heptomino": p.bheptomino(booarray);break;
 					case "Boat Stretcher":p.boatstretcher(booarray);break;
+<<<<<<< HEAD
 					case "Switch Engine" :p.swtichengine(booarray);break;
 					case "Glider Gun" :p.glidergun(booarray);break;
+=======
+>>>>>>> branch 'main' of https://github.com/SlickInc/TheGameOfLife.git
 					}
 
 					for(int i = 0; i<button.length;i++) {
