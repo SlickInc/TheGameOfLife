@@ -152,7 +152,7 @@ public class Patterns {
 	 * @param grid
 	 * @return
 	 */
-	public boolean[] gliderrun(boolean grid[]) {
+	public boolean[] glidergun(boolean grid[]) {
 		try {
 			grid[x] = true;
 			grid[x+50] = true;
@@ -160,16 +160,19 @@ public class Patterns {
 			grid[x+48] = true;
 			grid[x+47] = true;
 			grid[x+55] = true;
+			grid[x+89] = true;
 			grid[x+99] = true;
 			grid[x+98] = true;
 			grid[x+97] = true;
 			grid[x+96] = true;
-			grid[x+90] = true;
+			grid[x+101] = true;
+			grid[x+241] = true;
+			grid[x+140] = true;
 			grid[x+105] = true;
 			grid[x+149] = true;
 			grid[x+146] = true;
 			grid[x+138] = true;
-			grid[x+137] = true;
+		
 			grid[x+158] = true;
 			grid[x+159] = true;
 			grid[x+199] = true;
@@ -177,7 +180,9 @@ public class Patterns {
 			grid[x+197] = true;
 			grid[x+196] = true;
 			grid[x+191] = true;
-			grid[x+190] = true;
+		
+			grid[x+208] = true;
+			grid[x+209] = true;
 			grid[x+187] = true;
 			grid[x+182] = true;
 			grid[x+181] = true;
@@ -185,21 +190,20 @@ public class Patterns {
 			grid[x+249] = true;
 			grid[x+248] = true;
 			grid[x+247] = true;
-			grid[x+242] = true;
-			grid[x+241] = true;
+			
+			
 			grid[x+237] = true;
 			grid[x+232] = true;
 			grid[x+231] = true;
 			grid[x+300] = true;
-			grid[x+295] = true;
-			grid[x+294] = true;
+		
 			grid[x+291] = true;
-			grid[x+290] = true;
-			grid[x+286] = true;
-			grid[x+285] = true;
-			grid[x+345] = true;
-			grid[x+343] = true;
-			grid[x+390] = true;
+			
+			grid[x+287] = true;
+			
+			grid[x+340] = true;
+			grid[x+338] = true;
+			grid[x+389] = true;
 		}catch(Exception e){
 			
 		}
