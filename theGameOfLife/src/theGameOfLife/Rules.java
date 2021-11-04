@@ -31,6 +31,7 @@ public class Rules {
 		
 		// array for combo boxes for the rules 
 		String[] names = {"Live", "Die", "Born"};
+		
 		N0 = new JComboBox(names);
 		N0.setSelectedIndex(1);
 		n[0] = names[1];
@@ -171,7 +172,9 @@ public class Rules {
 	public void showrules() {
 		frame.setVisible(true);
 	}
-	// added the actions to the drop down 
+	/**
+	 * Makes sure the rules are saved and applied
+	 */
 	public void saveRules() {
 		N0.addActionListener(new ActionListener() {
 

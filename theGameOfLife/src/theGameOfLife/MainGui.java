@@ -82,20 +82,13 @@ public class MainGui {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-
-				boolean stop = true;
-				do {
-					go(booarray);
-					System.out.println("go");
-				}while(stop == false);
-
+				//sets up timer
 				Timer timer = new Timer();
 				TimerTask task = new TimerTask() {
 
 					@Override
 					public void run() {
 						go(booarray);
-						
 						//stops the timer
 						STOP.addActionListener(new ActionListener() {
 
@@ -233,7 +226,7 @@ public class MainGui {
 		
 		
 	/**
-	 * Puts buttons at top of the array	
+	 * Arranges the order of all the components	
 	 */
 		
 		c.ipadx = 10;
