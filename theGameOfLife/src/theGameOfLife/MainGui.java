@@ -191,19 +191,11 @@ public class MainGui {
 					case "Glider": p.glider(booarray);break;
 					case "Methuselah": p.methuselah(booarray);break;
 					case "Pentadecathlon": p.pentadecathlon(booarray);break;
-
 					case "B-Heptomino": p.bheptomino(booarray);break;
-
 					case "Boat Stretcher":p.boatstretcher(booarray);break;
-
-
-			
-
 					case "Switch Engine" :p.swtichengine(booarray);break;
 					case "Glider Gun" :p.glidergun(booarray);break;
-
-
-
+					
 
 					}
 					//sets the right buttons red
@@ -287,10 +279,10 @@ public class MainGui {
 	 * determines whether to clear a button or set it to red
 	 * @param grid
 	 */
-	public void go(boolean[] grid) {
-		rules.gameRun(grid, rules.checkNeighbors(grid));
+	public void go(boolean[] booarray) {
+		rules.gameRun(booarray, rules.checkNeighbors(booarray));
 		for(int i = 0; i<button.length;i++) {
-			if (grid[i] == false){
+			if (booarray[i] == false){
 				button[i].setBackground(Color.white);
 			}else {
 				button[i].setBackground(Color.RED);

@@ -9,250 +9,254 @@ public class Patterns {
 	}
 	/**
 	 * single cell pattern
-	 * @param grid
+	 * @param booarray
 	 * @return
 	 */
-	public boolean[] singleCell(boolean grid[]) {
-		grid[x] = true;
-		return grid;
+	public boolean[] singleCell(boolean booarray[]) {
+		booarray[x] = true;
+		return booarray;
 	}
 	/** 
 	 * glider pattern
 	 * @param grid
 	 * @return
 	 */
-	public boolean[] glider(boolean grid[]) {
+	public boolean[] glider(boolean booarray[]) {
 		try {
-			grid[x] = true;
-			grid[x+1] = true;
-			grid[x+2] = true;
-			grid[x+50] = true;
-			grid[x+101] = true;
+			booarray[x] = true;
+			booarray[x+1] = true;
+			booarray[x+2] = true;
+			booarray[x+50] = true;
+			booarray[x+101] = true;
 		}catch(Exception e){
 			
 		}
-		return grid;
+		return booarray;
 	}
 	/**
 	 * methuselah pattern
 	 * @param grid
 	 * @return
 	 */
-	public boolean[] methuselah(boolean grid[]) {
+	public boolean[] methuselah(boolean booarray[]) {
 		try {
-			grid[x] = true;
-			grid[x+1] = true;
-			grid[x-1] = true;
-			grid[x+50] = true;
-			grid[x-49] = true;
+			booarray[x] = true;
+			booarray[x+1] = true;
+			booarray[x-1] = true;
+			booarray[x+50] = true;
+			booarray[x-49] = true;
 		}catch(Exception e){
 			
 		}
-		return grid;
+		return booarray;
 	}
 	/**
 	 * pentadecathlon pattern
 	 * @param grid
 	 * @return
 	 */
-	public boolean[] pentadecathlon(boolean grid[]) {
+	public boolean[] pentadecathlon(boolean booarray[]) {
 		try {
-			grid[x] = true;
-			grid[x+1] = true;
-			grid[x-1] = true;
-			grid[x-2] = true;
-			grid[x-48] = true;
-			grid[x+52] = true;
-			grid[x+3] = true;
-			grid[x+4] = true;
-			grid[x+47] = true;
-			grid[x-53] = true;
-			grid[x-4] = true;
-			grid[x-5] = true;
+			booarray[x] = true;
+			booarray[x+1] = true;
+			booarray[x-1] = true;
+			booarray[x-2] = true;
+			booarray[x-48] = true;
+			booarray[x+52] = true;
+			booarray[x+3] = true;
+			booarray[x+4] = true;
+			booarray[x+47] = true;
+			booarray[x-53] = true;
+			booarray[x-4] = true;
+			booarray[x-5] = true;
 		}catch(Exception e){
 			
 		}
-		return grid;
+		return booarray;
 	}
 	/**
 	 * bheptomino pattern
 	 * @param grid
 	 * @return
 	 */
-	public boolean[] bheptomino(boolean grid[]) {
+	public boolean[] bheptomino(boolean booarray[]) {
 		try {
-			grid[x] = true;
-			grid[x-1] = true;
-			grid[x-2] = true;
-			grid[x+50] = true;
-			grid[x+51] = true;
-			grid[x+48] = true;
-			grid[x-51] = true;
+			booarray[x] = true;
+			booarray[x-1] = true;
+			booarray[x-2] = true;
+			booarray[x+50] = true;
+			booarray[x+51] = true;
+			booarray[x+48] = true;
+			booarray[x-51] = true;
 		}catch(Exception e){
 			
 		}
-		return grid;
+		return booarray;
 	}
 	/**
 	 * boat stretcher pattern
 	 * @param grid
 	 * @return
 	 */
-	public boolean[] boatstretcher(boolean grid[]) {
+	public boolean[] boatstretcher(boolean booarray[]) {
 		try {
-			grid[x] = true;
-			grid [x-11]=true;
-			grid [x-10]=true;
-			grid [x-8]=true;
-			grid [x+1]=true;
-			grid [x+2]=true;
-			grid [x+39]=true;
-			grid [x+43]=true;
-			grid [x+50]=true;
-			grid [x+89]=true;
-			grid [x+94]=true;
-			grid [x+102]=true;
-			grid [x+110]=true;
-			grid [x+111]=true;
-			grid [x+141]=true;
-			grid [x+142]=true;
-			grid [x+150]=true;
-			grid [x+152]=true;
-			grid [x+157]=true;
-			grid [x+158]=true;
-			grid [x+160]=true;
-			grid [x+193]=true;
-			grid [x+195]=true;
-			grid [x+200]=true;
-			grid [x+201]=true;
-			grid [x+202]=true;
-			grid [x+204]=true;
-			grid [x+207]=true;
-			grid [x+208]=true;
-			grid [x+249]=true;
-			grid [x+253]=true;
-			grid [x+254]=true;
-			grid [x+257]=true;
-			grid [x+258]=true;
-			grid [x+299]=true;
-			grid [x+300]=true;
-			grid [x+298]=true;
-			grid [x+296]=true;
-			grid [x+295]=true;
-			grid [x+301]=true;
-			grid [x+303]=true;
-			grid [x+304]=true;
-			grid [x+350]=true;
-			grid [x+351]=true;
-			grid [x+352]=true;
-			grid [x+349]=true;
-			grid [x+348]=true;
-			grid [x+347]=true;
-			grid [x+346]=true;
-			grid [x+551]=true;
-			grid [x+600]=true;
-			grid [x+602]=true;
-			grid [x+651]=true;
+			booarray[x] = true;
+			booarray [x-11]=true;
+			booarray [x-10]=true;
+			booarray [x-8]=true;
+			booarray [x+1]=true;
+			booarray [x+2]=true;
+			booarray [x+39]=true;
+			booarray [x+43]=true;
+			booarray [x+50]=true;
+			booarray [x+89]=true;
+			booarray [x+94]=true;
+			booarray [x+102]=true;
+			booarray [x+110]=true;
+			booarray [x+111]=true;
+			booarray [x+141]=true;
+			booarray [x+142]=true;
+			booarray [x+150]=true;
+			booarray [x+152]=true;
+			booarray [x+157]=true;
+			booarray [x+158]=true;
+			booarray [x+160]=true;
+			booarray [x+193]=true;
+			booarray [x+195]=true;
+			booarray [x+200]=true;
+			booarray [x+201]=true;
+			booarray [x+202]=true;
+			booarray [x+204]=true;
+			booarray [x+207]=true;
+			booarray [x+208]=true;
+			booarray [x+249]=true;
+			booarray [x+253]=true;
+			booarray [x+254]=true;
+			booarray [x+257]=true;
+			booarray [x+258]=true;
+			booarray [x+299]=true;
+			booarray [x+300]=true;
+			booarray [x+298]=true;
+			booarray [x+296]=true;
+			booarray [x+295]=true;
+			booarray [x+301]=true;
+			booarray [x+303]=true;
+			booarray [x+304]=true;
+			booarray [x+350]=true;
+			booarray [x+351]=true;
+			booarray [x+352]=true;
+			booarray [x+349]=true;
+			booarray [x+348]=true;
+			booarray [x+347]=true;
+			booarray [x+346]=true;
+			booarray [x+551]=true;
+			booarray [x+600]=true;
+			booarray [x+602]=true;
+			booarray [x+651]=true;
 		}catch(Exception e){
 			
 		}
-		return grid;
+		return booarray;
 	}
 	/**
 	 * switch engine pattern
 	 * @param grid
 	 * @return
 	 */
-	public boolean[] swtichengine(boolean grid[]) {
+	public boolean[] swtichengine(boolean booarray[]) {
 		try {
-			grid[x] = true;
-			grid[x-2] = true;
-			grid[x+47] = true;
-			grid[x+98] = true;
-			grid[x+101] = true;
-			grid[x+150] = true;
-			grid[x+151] = true;
-			grid[x+152] = true;
-			grid[x+273] = true;
-			grid[x+274] = true;
-			grid[x+323] = true;
+			booarray[x] = true;
+			booarray[x-2] = true;
+			booarray[x+47] = true;
+			booarray[x+98] = true;
+			booarray[x+101] = true;
+			booarray[x+150] = true;
+			booarray[x+151] = true;
+			booarray[x+152] = true;
+			booarray[x+273] = true;
+			booarray[x+274] = true;
+			booarray[x+323] = true;
 		}catch(Exception e){
 			
 		}
-		return grid;
+		return booarray;
 	}
 	/**
 	 * glider gun pattern
 	 * @param grid
 	 * @return
 	 */
-	public boolean[] glidergun(boolean grid[]) {
+	public boolean[] glidergun(boolean booarray[]) {
 		try {
-			grid[x] = true;
-			grid[x+50] = true;
-			grid[x+49] = true;
-			grid[x+48] = true;
-			grid[x+47] = true;
-			grid[x+55] = true;
-			grid[x+88] = true;
-			grid[x+99] = true;
-			grid[x+98] = true;
-			grid[x+97] = true;
-			grid[x+96] = true;
+			booarray[x] = true;
+			booarray[x+50] = true;
+			booarray[x+49] = true;
+			booarray[x+48] = true;
+			booarray[x+47] = true;
+			booarray[x+55] = true;
+			booarray[x+88] = true;
+			booarray[x+99] = true;
+			booarray[x+98] = true;
+			booarray[x+97] = true;
+			booarray[x+96] = true;
+
+			booarray[x+240] = true;
+			booarray[x+139] = true;
+			booarray[x+105] = true;
+			booarray[x+149] = true;
+			booarray[x+146] = true;
+			booarray[x+137] = true;
+			booarray[x+190] = true;
+			booarray[x+240] = true;
+			booarray[x+290] = true;
+
+			booarray[x+159] = true;
+			booarray[x+199] = true;
+			booarray[x+198] = true;
+			booarray[x+197] = true;
+			booarray[x+196] = true;
+			booarray[x+190] = true;
+			booarray[x+160] = true;
 			
-			grid[x+240] = true;
-			grid[x+139] = true;
-			grid[x+105] = true;
-			grid[x+149] = true;
-			grid[x+146] = true;
-			grid[x+137] = true;
-			grid[x+190] = true;
-			grid[x+240] = true;
-			grid[x+290] = true;
-			
-			grid[x+159] = true;
-			grid[x+199] = true;
-			grid[x+198] = true;
-			grid[x+197] = true;
-			grid[x+196] = true;
-			grid[x+190] = true;
-			grid[x+160] = true;
-			
-			grid[x+210] = true;
-			grid[x+209] = true;
-			
-			
-			grid[x+191] = true;
-			
-			grid[x+241] = true;
-			
-			grid[x+291] = true;
-			
-			grid[x+186] = true;
-			grid[x+226] = true;
-			grid[x+225] = true;
-			grid[x+250] = true;
-			grid[x+249] = true;
-			grid[x+248] = true;
-			grid[x+247] = true;
+
+			booarray[x+210] = true;
+			booarray[x+209] = true;
 			
 			
-			grid[x+236] = true;
-			grid[x+276] = true;
-			grid[x+275] = true;
-			grid[x+300] = true;
-		
-			grid[x+290] = true;
+			booarray[x+191] = true;
 			
-			grid[x+286] = true;
-			//fixed
-			grid[x+339] = true;
-			grid[x+337] = true;
-			grid[x+388] = true;
+			booarray[x+241] = true;
+			
+			booarray[x+291] = true;
+			
+			booarray[x+186] = true;
+			booarray[x+226] = true;
+			booarray[x+225] = true;
+			booarray[x+250] = true;
+			booarray[x+249] = true;
+			booarray[x+248] = true;
+			booarray[x+247] = true;
+
+			
+			
+
+			booarray[x+236] = true;
+			booarray[x+276] = true;
+			booarray[x+275] = true;
+			booarray[x+300] = true;
+
+			booarray[x+290] = true;
+
+			
+
+			booarray[x+286] = true;
+			booarray[x+339] = true;
+			booarray[x+337] = true;
+			booarray[x+388] = true;
 		}catch(Exception e){
 			
 		}
-		return grid;
+		return booarray;
 	}
 
 
