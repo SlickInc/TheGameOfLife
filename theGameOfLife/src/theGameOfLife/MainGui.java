@@ -26,7 +26,7 @@ public class MainGui {
 	private JPanel bottom;
 	private JPanel top;
 	private JPanel panel;
-	private JButton[] button;
+	private JButton[] cells;
 	private JComboBox patterns;
 	private int randomm;
 	
@@ -53,7 +53,7 @@ public class MainGui {
 		bottom = new JPanel(new GridBagLayout());
 
 		
-		button = new JButton[5000];
+		cells = new JButton[5000];
 		
 		label = new JLabel("");
 
@@ -118,7 +118,7 @@ public class MainGui {
 			public void actionPerformed(ActionEvent e) {
 				//loops to clear the board
 				for (int i = 0; i<5000; i++) {
-					button[i].setBackground(Color.WHITE);
+					cells[i].setBackground(Color.WHITE);
 					booarray[i] = false;
 				}
 			}
@@ -136,7 +136,7 @@ public class MainGui {
 				//loops to randomize the board. Can be pressed multiple times
 				for (int ran = 0; ran < r.nextInt(5000-1+1)+1; ran++ ) {
 					randomm = r.nextInt(4999-1+1)+1;
-					button[randomm].setBackground(Color.RED);
+					cells[randomm].setBackground(Color.RED);
 					booarray[randomm] = true;
 				}
 
@@ -173,11 +173,11 @@ public class MainGui {
 		 * Runs the patterns class
 		 */
 
-		for (int i = 0; i<button.length; i++) {
+		for (int i = 0; i<cells.length; i++) {
 
-			button[i] = new JButton("");
-			button[i].setActionCommand(Integer.toString(i));
-			button[i].addActionListener(new ActionListener() {
+			cells[i] = new JButton("");
+			cells[i].setActionCommand(Integer.toString(i));
+			cells[i].addActionListener(new ActionListener() {
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
@@ -199,9 +199,9 @@ public class MainGui {
 
 					}
 					//sets the right buttons red
-					for(int i = 0; i<button.length;i++) {
+					for(int i = 0; i<cells.length;i++) {
 						if (booarray[i] == true){
-							button[i].setBackground(Color.RED);
+							cells[i].setBackground(Color.RED);
 						}
 					}
 					
@@ -211,7 +211,7 @@ public class MainGui {
 			c.ipady = -5;
 			c.gridx = x;
 			c.gridy= y;
-			bottom.add(button[i],c);
+			bottom.add(cells[i],c);
 			x++;
 			if(x == 50) {
 				x= 0;
@@ -281,11 +281,11 @@ public class MainGui {
 	 */
 	public void go(boolean[] booarray) {
 		rules.gameRun(booarray, rules.checkNeighbors(booarray));
-		for(int i = 0; i<button.length;i++) {
+		for(int i = 0; i<cells.length;i++) {
 			if (booarray[i] == false){
-				button[i].setBackground(Color.white);
+				cells[i].setBackground(Color.white);
 			}else {
-				button[i].setBackground(Color.RED);
+				cells[i].setBackground(Color.RED);
 			}
 		}
 	}
