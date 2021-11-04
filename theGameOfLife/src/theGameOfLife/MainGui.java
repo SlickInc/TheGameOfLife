@@ -82,20 +82,13 @@ public class MainGui {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-
-				boolean stop = true;
-				do {
-					go(booarray);
-					System.out.println("go");
-				}while(stop == false);
-
+				//sets up timer
 				Timer timer = new Timer();
 				TimerTask task = new TimerTask() {
 
 					@Override
 					public void run() {
 						go(booarray);
-						
 						//stops the timer
 						STOP.addActionListener(new ActionListener() {
 
@@ -202,6 +195,8 @@ public class MainGui {
 					case "Boat Stretcher":p.boatstretcher(booarray);break;
 					case "Switch Engine" :p.swtichengine(booarray);break;
 					case "Glider Gun" :p.glidergun(booarray);break;
+					
+
 					}
 					//sets the right buttons red
 					for(int i = 0; i<button.length;i++) {
@@ -233,7 +228,7 @@ public class MainGui {
 		
 		
 	/**
-	 * Puts buttons at top of the array	
+	 * Arranges the order of all the components	
 	 */
 		
 		c.ipadx = 10;
@@ -284,10 +279,10 @@ public class MainGui {
 	 * determines whether to clear a button or set it to red
 	 * @param grid
 	 */
-	public void go(boolean[] grid) {
-		rules.gameRun(grid, rules.checkNeighbors(grid));
+	public void go(boolean[] booarray) {
+		rules.gameRun(booarray, rules.checkNeighbors(booarray));
 		for(int i = 0; i<button.length;i++) {
-			if (grid[i] == false){
+			if (booarray[i] == false){
 				button[i].setBackground(Color.white);
 			}else {
 				button[i].setBackground(Color.RED);

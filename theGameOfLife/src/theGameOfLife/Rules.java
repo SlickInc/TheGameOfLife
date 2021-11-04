@@ -31,6 +31,7 @@ public class Rules {
 		
 		// array for combo boxes for the rules 
 		String[] names = {"Live", "Die", "Born"};
+		
 		N0 = new JComboBox(names);
 		N0.setSelectedIndex(1);
 		n[0] = names[1];
@@ -171,7 +172,9 @@ public class Rules {
 	public void showrules() {
 		frame.setVisible(true);
 	}
-	// added the actions to the drop down 
+	/**
+	 * Makes sure the rules are saved and applied
+	 */
 	public void saveRules() {
 		N0.addActionListener(new ActionListener() {
 
@@ -270,19 +273,19 @@ public class Rules {
 	 * @param count
 	 * @return grid
 	 */
-	public boolean[] gameRun(boolean[] grid, int[] count) {
+	public boolean[] gameRun(boolean[] booarray, int[] count) {
 		for(int i = 0; i<5000;i++) {
 			for(int e = 0;e<=8;e++) {
 				if(count[i] == e){
 					if(n[e] == "Die") {
-						grid[i] = false;
+						booarray[i] = false;
 					}else if(n[e] == "Born") {
-						grid[i] = true;
+						booarray[i] = true;
 					}
 				}
 			}
 		}
-		return grid;
+		return booarray;
 	}
 	/**
 	 * checks amount of neighbors
@@ -290,63 +293,63 @@ public class Rules {
 	 * @param element
 	 * @return
 	 */
-	public int[] checkNeighbors(boolean[] grid) {
+	public int[] checkNeighbors(boolean[] booarray) {
 		int[] n= new int[5000];
 		for(int i = 0;i<5000;i++) {
 			n[i]= 0;
 		}
 		for(int i = 0;i<5000;i++) {
 			try {
-				if(grid[i+1] == true ) {
+				if(booarray[i+1] == true ) {
 					n[i]++;
 				}
 			}catch(Exception e) {
 				
 			}
 			try {
-				if(grid[i-1] == true ) {
+				if(booarray[i-1] == true ) {
 					n[i]++;
 				}
 			}catch(Exception e) {
 				
 			}
 			try {
-				if(grid[i+50] == true ) {
+				if(booarray[i+50] == true ) {
 					n[i]++;
 				}
 			}catch(Exception e) {
 				
 			}
 			try {
-				if(grid[i-50] == true ) {
+				if(booarray[i-50] == true ) {
 					n[i]++;
 				}
 			}catch(Exception e) {
 				
 			}
 			try {
-				if(grid[i+51] == true ) {
+				if(booarray[i+51] == true ) {
 					n[i]++;
 				}
 			}catch(Exception e) {
 					
 			}
 			try {
-				if(grid[i+49] == true ) {
+				if(booarray[i+49] == true ) {
 					n[i]++;
 				}
 			}catch(Exception e) {
 				
 			}
 			try {
-				if(grid[i-51] == true ) {
+				if(booarray[i-51] == true ) {
 					n[i]++;
 				}
 			}catch(Exception e) {
 				
 			}
 			try {
-				if(grid[i-49] == true ) {
+				if(booarray[i-49] == true ) {
 					n[i]++;
 				}
 			}catch(Exception e) {
