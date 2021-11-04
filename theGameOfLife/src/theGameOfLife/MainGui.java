@@ -198,7 +198,7 @@ public class MainGui {
 					case "Glider": p.glider(booarray);break;
 					case "Methuselah": p.methuselah(booarray);break;
 					case "Pentadecathlon": p.pentadecathlon(booarray);break;
-<<<<<<< HEAD
+
 					case "B-Heptomino": p.bheptomino(booarray);break;
 
 					case "Boat Stretcher":p.boatstretcher(booarray);break;
@@ -210,12 +210,8 @@ public class MainGui {
 					case "Glider Gun" :p.glidergun(booarray);break;
 
 
-=======
-					case "B-Heptomino": p.bheptomino(booarray);break;
-					case "Boat Stretcher":p.boatstretcher(booarray);break;
-					case "Switch Engine" :p.swtichengine(booarray);break;
-					case "Glider Gun" :p.glidergun(booarray);break;
->>>>>>> branch 'main' of https://github.com/SlickInc/TheGameOfLife.git
+
+
 					}
 					//sets the right buttons red
 					for(int i = 0; i<button.length;i++) {
