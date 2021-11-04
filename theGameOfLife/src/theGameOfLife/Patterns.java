@@ -94,7 +94,7 @@ public class Patterns {
 		return grid;
 	}
 	/**
-	 * boatstretcher pattern
+	 * boat stretcher pattern
 	 * @param grid
 	 * @return
 	 */
@@ -159,7 +159,7 @@ public class Patterns {
 		return grid;
 	}
 	/**
-	 * switchengine pattern
+	 * switch engine pattern
 	 * @param grid
 	 * @return
 	 */
@@ -182,7 +182,7 @@ public class Patterns {
 		return grid;
 	}
 	/**
-	 * glidergun pattern
+	 * glider gun pattern
 	 * @param grid
 	 * @return
 	 */
@@ -194,52 +194,57 @@ public class Patterns {
 			grid[x+48] = true;
 			grid[x+47] = true;
 			grid[x+55] = true;
-			grid[x+89] = true;
+			grid[x+88] = true;
 			grid[x+99] = true;
 			grid[x+98] = true;
 			grid[x+97] = true;
 			grid[x+96] = true;
 			
-			grid[x+241] = true;
-			grid[x+140] = true;
+			grid[x+240] = true;
+			grid[x+139] = true;
 			grid[x+105] = true;
 			grid[x+149] = true;
 			grid[x+146] = true;
-			grid[x+138] = true;
-			grid[x+191] = true;
-			grid[x+241] = true;
-			grid[x+291] = true;
+			grid[x+137] = true;
+			grid[x+190] = true;
+			grid[x+240] = true;
+			grid[x+290] = true;
 			
 			grid[x+159] = true;
 			grid[x+199] = true;
 			grid[x+198] = true;
 			grid[x+197] = true;
 			grid[x+196] = true;
-			grid[x+191] = true;
+			grid[x+190] = true;
 			grid[x+160] = true;
 			
 			grid[x+210] = true;
 			grid[x+209] = true;
-			grid[x+192] = true;
-			grid[x+242] = true;
-			grid[x+292] = true;
-			grid[x+187] = true;
-			grid[x+227] = true;
+			
+			
+			grid[x+191] = true;
+			
+			grid[x+241] = true;
+			
+			grid[x+291] = true;
+			
+			grid[x+186] = true;
 			grid[x+226] = true;
+			grid[x+225] = true;
 			grid[x+250] = true;
 			grid[x+249] = true;
 			grid[x+248] = true;
 			grid[x+247] = true;
 			
 			
-			grid[x+237] = true;
-			grid[x+277] = true;
+			grid[x+236] = true;
 			grid[x+276] = true;
+			grid[x+275] = true;
 			grid[x+300] = true;
 		
-			grid[x+291] = true;
+			grid[x+290] = true;
 			
-			grid[x+287] = true;
+			grid[x+286] = true;
 			//fixed
 			grid[x+339] = true;
 			grid[x+337] = true;
