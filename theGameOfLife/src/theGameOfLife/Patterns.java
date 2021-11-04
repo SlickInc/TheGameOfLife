@@ -7,10 +7,20 @@ public class Patterns {
 	public Patterns(int button) {
 		x = button;
 	}
+	/**
+	 * single cell pattern
+	 * @param grid
+	 * @return
+	 */
 	public boolean[] singleCell(boolean grid[]) {
 		grid[x] = true;
 		return grid;
 	}
+	/** 
+	 * glider pattern
+	 * @param grid
+	 * @return
+	 */
 	public boolean[] glider(boolean grid[]) {
 		try {
 			grid[x] = true;
@@ -23,6 +33,11 @@ public class Patterns {
 		}
 		return grid;
 	}
+	/**
+	 * methuselah pattern
+	 * @param grid
+	 * @return
+	 */
 	public boolean[] methuselah(boolean grid[]) {
 		try {
 			grid[x] = true;
@@ -35,6 +50,11 @@ public class Patterns {
 		}
 		return grid;
 	}
+	/**
+	 * pentadecathlon pattern
+	 * @param grid
+	 * @return
+	 */
 	public boolean[] pentadecathlon(boolean grid[]) {
 		try {
 			grid[x] = true;
@@ -54,6 +74,11 @@ public class Patterns {
 		}
 		return grid;
 	}
+	/**
+	 * bheptomino pattern
+	 * @param grid
+	 * @return
+	 */
 	public boolean[] bheptomino(boolean grid[]) {
 		try {
 			grid[x] = true;
@@ -68,7 +93,11 @@ public class Patterns {
 		}
 		return grid;
 	}
-
+	/**
+	 * boatstretcher pattern
+	 * @param grid
+	 * @return
+	 */
 	public boolean[] boatstretcher(boolean grid[]) {
 		try {
 			grid[x] = true;
@@ -129,6 +158,11 @@ public class Patterns {
 		}
 		return grid;
 	}
+	/**
+	 * switchengine pattern
+	 * @param grid
+	 * @return
+	 */
 	public boolean[] swtichengine(boolean grid[]) {
 		try {
 			grid[x] = true;
@@ -148,7 +182,7 @@ public class Patterns {
 		return grid;
 	}
 	/**
-	 * this does not work
+	 * glidergun pattern
 	 * @param grid
 	 * @return
 	 */
